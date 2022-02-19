@@ -16,17 +16,10 @@ ActiveRecord::Schema.define(version: 2022_02_18_155744) do
   enable_extension "plpgsql"
 
   create_table "days", force: :cascade do |t|
-    t.bigint "join_calendar_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["join_calendar_id"], name: "index_days_on_join_calendar_id"
-  end
-
-  create_table "join_calendars", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_join_calendars_on_user_id"
+    t.index ["user_id"], name: "index_days_on_user_id"
   end
 
   create_table "moods", force: :cascade do |t|
@@ -59,8 +52,7 @@ ActiveRecord::Schema.define(version: 2022_02_18_155744) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "days", "join_calendars"
-  add_foreign_key "join_calendars", "users"
+  add_foreign_key "days", "users"
   add_foreign_key "moods", "days"
   add_foreign_key "tasks", "days"
 end
