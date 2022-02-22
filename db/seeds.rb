@@ -15,6 +15,15 @@ user = User.create! :email => Faker::Internet.email, :password => 'topsecret', :
     puts "Failed"
   end
 
+user2 = User.create! :email => Faker::Internet.email, :password => 'topsecret', :password_confirmation => 'topsecret'
+  if user.save
+    puts "User added"
+  else
+    puts "Failed"
+  end
+
 day = Day.create!(:calendar_date => Date.today, :user_id => user.id )
+day2 = Day.create!(:calendar_date => Date.today, :user_id => user2.id )
+
 
 happy_mood = Mood.create!(mood_name: 'Happy', day: day )
