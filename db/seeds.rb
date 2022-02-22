@@ -16,3 +16,5 @@ user = User.create! :email => Faker::Internet.email, :password => 'topsecret', :
   end
 
 day = Day.create!(:calendar_date => Date.today, :user_id => user.id )
+
+happy_mood = Mood.create!(mood_name: 'Happy', day: day )

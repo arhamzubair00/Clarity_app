@@ -8,21 +8,31 @@ class MoodsController < ApplicationController
   #New
   def new
     @mood = Mood.new
+    @day = current_day
   end
 
   #Create
   def create
     @mood = Mood.new(mood_params)
-    #mood belongs to day
-    @mood.day = current_day
+    @day = current_day
+    @mood.day = @day
+    if @mood.save!
+    # redirect_to restaurant_path(@restaurant)
+    else
+      #if the mood doesnt save, reload the new mood page
+      render :new
+    end
   end
 
   #Edit
   def edit
+    @mood = Mood.find(params[:id])
   end
 
   #Update
   def update
+    @mood = Mood.find(params[:id])
+    @mood.update(params[:mood])
   end
 
 
@@ -30,7 +40,7 @@ class MoodsController < ApplicationController
    private
 
    def mood_params
-     params.require(:mood).permit(:mood_name)
+     params.require(:mood).permit(:mood_name, :mood_notes)
    end
 
    def current_day
