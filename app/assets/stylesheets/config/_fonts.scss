@@ -1,16 +1,19 @@
-// Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+// // Import Google fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://db.onlinewebfonts.com/c/4a24899e94d8236f671c1090cd9e068c?family=Canela');
+@import url('https://db.onlinewebfonts.com/c/3def92f7b2ad644bd382798ecc8ca4c7?family=Canela');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: 'Canela', bold;
+$headers-font: 'Canela', bold;
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+
+@font-face {
+  font-family: "Canela Regular";
+  src: url("/db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Canela Bold";
+  src: url("/db.onlinewebfonts.com/t/3def92f7b2ad644bd382798ecc8ca4c7.woff") format("woff"),
+}
