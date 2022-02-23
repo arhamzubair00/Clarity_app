@@ -6,6 +6,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+
       <li class="nav-item">
          <%= link_to "Dashboard", "#", class: "nav-link" %>
       </li>
@@ -19,13 +20,22 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
+
+
       <li class="nav-item">
         <%= link_to "About", "#", class: "nav-link" %>
       </li>
+
+
     </ul>
 
     <form class="search-form form-inline my-2 my-lg-0">
       <input class="search-input form-control mr-sm-2" type="search" placeholder="🔍 Search " aria-label="Search">
     </form>
+    <% if !user_signed_in? %>
+      <span class=“nav-item”>
+        <%= link_to "Login", new_user_session_path, class: "nav-link log-in" %>
+      </span>
+    <% end %>
   </div>
 </nav>
