@@ -1,6 +1,5 @@
 .navbar-lewagon {
   background: white;
-  padding: 10px 150px;
 }
 
 .navbar-title {
@@ -9,10 +8,9 @@
   margin-right: 30px;
 }
 
-.navbar-lewagon .form-inline {
-  flex-grow: 0;
+.nav-container {
+  display: flex;
 }
-
 .navbar-lewagon .navbar-title img {
   width: 40px;
 }
@@ -28,6 +26,12 @@
 .navbar-light .navbar-nav .nav-link:hover {
   border-bottom: $clarity-pink;
 }
+
+.nav-right {
+  display: flex;
+  margin-left: 450px;
+}
+
 // search form
 .search-form {
   color: #ffff;
