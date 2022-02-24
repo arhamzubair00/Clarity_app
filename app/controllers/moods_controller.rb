@@ -17,7 +17,7 @@ class MoodsController < ApplicationController
     @day = current_day
     @mood.day = @day
     if @mood.save!
-    # redirect_to restaurant_path(@restaurant)
+    # redirect_to day_path(@day)
     else
       #if the mood doesnt save, reload the new mood page
       render :new
