@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2022_02_24_204120) do
   create_table "tasks", force: :cascade do |t|
     t.bigint "day_id", null: false
     t.string "title"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["day_id"], name: "index_tasks_on_day_id"
