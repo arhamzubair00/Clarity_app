@@ -8,7 +8,7 @@
 
 require 'faker'
 
-user = User.create! :email => Faker::Internet.email, :password => 'topsecret', :password_confirmation => 'topsecret'
+user = User.create! :firstname => Faker::Name.first_name, :lastname => Faker::Name.last_name, :email => Faker::Internet.email, :password => 'topsecret', :password_confirmation => 'topsecret'
   if user.save
     puts "User added"
   else
@@ -27,3 +27,6 @@ day2 = Day.create!(:calendar_date => Date.today, :user_id => user2.id )
 
 
 happy_mood = Mood.create!(mood_name: 'Happy', day: day )
+sad_mood = Mood.create!(mood_name: 'Sad', day: day )
+
+task1 = Task.create!(title: 'Get out of bed', day: day)
