@@ -26,10 +26,11 @@ class TasksController < ApplicationController
     @task.update(params[:task])
   end
 
-  def delete
-    # @task = Task.find(params[:id])
-    # @task.destroy
-    #redirect_to
+  def destroy
+    @task = Task.find(params[:id])
+    @day = selected_day
+    @task.destroy
+    redirect_to day_path(@day)
   end
 
   private
