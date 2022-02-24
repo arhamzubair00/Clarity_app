@@ -5,7 +5,7 @@ li {
 
 .footer {
   padding: 16px 0;
-  background-color: $clarity-blue;
+  background-color: $darkblue;
 }
 
 .footer-links {
@@ -16,7 +16,7 @@ li {
 .footer-links li a {
   margin-right: 16px;
   margin-bottom: 0;
-  color: #ffff;
+  color: $white;
 }
 
 .footer-links li:last-child {
