@@ -6,9 +6,15 @@
 @import url('//db.onlinewebfonts.com/c/4a24899e94d8236f671c1090cd9e068c?family=Canela');
 @import url('//db.onlinewebfonts.com/c/3def92f7b2ad644bd382798ecc8ca4c7?family=Canela');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300&family=Playfair+Display:wght@700&display=swap');
+
 // Define fonts for body and headers
-$body-font: 'Canela', bold;
-$headers-font: 'Canela', bold;
+// $body-font: 'Canela', bold;
+// $headers-font: 'Canela', bold;
+
+$body-font: 'Playfair Display', serif;
+$headers-font: 'Playfair Display', serif;
 
 
 @font-face {
