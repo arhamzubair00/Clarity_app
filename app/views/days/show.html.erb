@@ -7,7 +7,7 @@
         <div class="btn btn-peach">Start</div>
       </div>
       <div class="task-list">
-        <% @tasks.each  do |task| %>
+        <% @tasks.sort_by{ |task| task.id }.each  do |task| %>
           <div class="btn task-list-item">
             <div class="task-status">
             <% if task.status == true %>
@@ -19,7 +19,7 @@
             <div class="task-title"><%= task.title %></div>
             <div class="task-edit">
               <div class="btn btn-info task-edit-button">
-                Edit
+                <%= link_to "Edit", edit_task_path(task)%>
               </div>
               <%# <i class="fa-solid fa-pen-to-square"></i> %>
             </div>
