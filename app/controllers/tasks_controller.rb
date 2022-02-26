@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-
+  #before_action :authenticate_user
   def new
     @task = Task.new
     @day = selected_day
@@ -10,7 +10,7 @@ class TasksController < ApplicationController
     @day = selected_day
     @task.day = @day
     if @task.save!
-      # redirect_to day_path(@day)
+      redirect_to day_path(@day)
     else
       #if the task doesnt save, reload the new task page
       render :new
@@ -18,12 +18,15 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @day = selected_day
     @task = Task.find(params[:id])
   end
 
   def update
+    @day = selected_day
     @task = Task.find(params[:id])
-    @task.update(params[:task])
+    @task.update(task_params)
+    redirect_to day_path(@day)
   end
 
   def destroy
@@ -35,16 +38,16 @@ class TasksController < ApplicationController
 
   private
 
-   def task_params
-     params.require(:task).permit(:title)
-   end
+  def task_params
+    params.require(:task).permit(:title, :status)
+  end
 
-   def selected_day
-     @current_day = Day.find(params[:day_id])
-   end
+  def selected_day
+    @current_day = Day.find(params[:day_id])
+  end
 
-   def confirm_delete
+  def confirm_delete
     @task = Task.find(params[:id])
     @task.destroy
-   end
+  end
 end
