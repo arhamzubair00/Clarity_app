@@ -8,5 +8,6 @@ class DaysController < ApplicationController
   def show
     @day = Day.find(params[:id])
     @tasks = Task.select { |task| task.day == @day}
+    @tasks.sort_by{ |task| task.id }
   end
 end

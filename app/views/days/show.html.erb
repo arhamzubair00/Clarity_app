@@ -8,17 +8,20 @@
       </div>
       <div class="task-list">
         <% @tasks.each  do |task| %>
-          <div class="task-list-item">
+          <div class="btn task-list-item">
             <div class="task-status">
             <% if task.status == true %>
-              X
+              <div class="task-done"></div>
             <% else %>
-              O
+              <div class="task-todo"></div>
             <% end %>
             </div>
             <div class="task-title"><%= task.title %></div>
             <div class="task-edit">
-              <i class="fa-solid fa-pen-to-square"></i>
+              <div class="btn btn-info task-edit-button">
+                Edit
+              </div>
+              <%# <i class="fa-solid fa-pen-to-square"></i> %>
             </div>
           </div>
         <% end  %>

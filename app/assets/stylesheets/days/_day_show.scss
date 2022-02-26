@@ -9,11 +9,6 @@
   color: white;
 }
 
-.justify-content-md-center {
-
- // justify-content:center;
-}
-
 .day-component {
  // justify-content:center;
   margin: 10% 0;
@@ -51,10 +46,31 @@
   border: 1px solid $darkblue;
   border-radius: 25px;
   background-color: white;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .task-title {
   font-size: 20px;
   text-align: left;
 
+}
+
+.task-edit-button {
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.task-todo {
+  background-color: lightgray;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.task-done {
+  background-color: $darkblue;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
 }
