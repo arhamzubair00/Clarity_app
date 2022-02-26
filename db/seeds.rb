@@ -24,3 +24,16 @@ require 'faker'
   # else
   #   puts "Failed"
   # end
+
+
+day = Day.create!(:calendar_date => Date.today, :user_id => user.id )
+# day2 = Day.create!(:calendar_date => Date.today, :user_id => user2.id )
+
+
+happy_mood = Mood.create!(mood_name: 'Happy', day: day )
+sad_mood = Mood.create!(mood_name: 'Sad', day: day )
+
+task1 = Task.create!(title: 'Get out of bed', day: day)
+task1 = Task.create!(title: 'Make bed', day: day)
+task1 = Task.create!(title: 'Shower', day: day)
+task1 = Task.create!(title: 'Start essay outline', day: day)

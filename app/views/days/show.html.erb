@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row justify-content-md-center day-page">
+    <div class="day-component col-md-8">
+      <h2><%= @day.calendar_date.strftime('%a, %d %b %Y') %></h2>
+      <div class="pomo">
+        <p>00:00</p>
+        <div class="btn btn-peach">Start</div>
+      </div>
+      <div class="task-list">
+        <% @tasks.sort_by{ |task| task.id }.each  do |task| %>
+          <div class="btn task-list-item">
+            <div class="task-status">
+            <% if task.status == true %>
+              <div class="task-done"></div>
+            <% else %>
+              <div class="task-todo"></div>
+            <% end %>
+            </div>
+            <div class="task-title"><%= task.title %></div>
+            <div class="task-edit">
+              <div class="btn btn-info task-edit-button">
+                <%= link_to "Edit", edit_task_path(task)%>
+              </div>
+              <%# <i class="fa-solid fa-pen-to-square"></i> %>
+            </div>
+          </div>
+        <% end  %>
+      </div>
+    </div>
+  </div>
+</div>
