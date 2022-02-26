@@ -1,0 +1,76 @@
+.day-page {
+  background-color: $peach !important;
+  display: flex;
+}
+
+.btn-peach {
+  border-radius: 5px;
+  background-color: $peach;
+  color: white;
+}
+
+.day-component {
+ // justify-content:center;
+  margin: 10% 0;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.day-component h2 {
+  text-align: center !important;
+  color: $darkblue;
+  margin-top: 15px;
+}
+
+.pomo {
+  color: $darkblue;
+  text-align: center !important;
+}
+
+.pomo p {
+ font-size: 70px;
+}
+
+.task-list {
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.task-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  border: 1px solid $darkblue;
+  border-radius: 25px;
+  background-color: white;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.task-title {
+  font-size: 20px;
+  text-align: left;
+
+}
+
+.task-edit-button {
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.task-todo {
+  background-color: lightgray;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.task-done {
+  background-color: $darkblue;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
