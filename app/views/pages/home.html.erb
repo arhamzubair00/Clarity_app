@@ -1,2 +1,156 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+  <section class="landing">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="landing-content">
+              <h1 class="landing-title">
+                Get a clearer mind with<br />
+                Clarity
+              </h1>
+              <p class="landing-desc">
+                A diary for the neurodiverse
+              </p>
+              <button class="fill-btn"><%= link_to "Log-in", new_user_session_path %></button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="service section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="service-title">
+              “Neurodiversity?”
+            </h3>
+            <p class="service-desc">
+              ADHD, Autism, Dyspraxia, Dyslexia, Dyscalculia, Dysgraphia, and Tourette's syndrome are all examples of neurodiverse conditions. They're diagnostic labels used to explain the diverse ways of thinking, learning, and processing information.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h3 class="service-title">
+              “I am Neurodiverse...”
+            </h3>
+            <p class="service-desc">
+              Welcome! Neurodiversity is awesome!
+              We tend to be creative problem-solvers who think outside the box, but who also come with a few struggles.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h3 class="service-title">
+              “What are those struggles?...”
+            </h3>
+            <p class="service-desc">
+                Forgetfulness <br />
+                Hyperfocus <br />
+                Time-management <br />
+                Anxiety/Stress <br />
+                Brain fog
+            </p>
+          </div>
+          <div class="col-md-6">
+          <img src="https://media.istockphoto.com/vectors/young-woman-goes-through-her-datebook-in-the-morning-and-plans-her-vector-id1189072996?k=20&m=1189072996&s=612x612&w=0&h=3L7vCpUiCKcOHoREaVOXaWu35lmYcRPufbj1pYUzycg=" alt="coffee-img" class="service-img">
+          </div>
+
+        </div>
+      </div>
+  </section>
+
+  <section class="program section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="program-content">
+              <h2 class="section-title">
+                Our Solution?<br />
+                Get things done, all in one, with <span>Clarity.</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="program-card">
+              <%= image_tag "https://media.istockphoto.com/vectors/man-working-with-computer-using-time-management-pomodoro-technique-vector-id1273323233?k=20&m=1273323233&s=612x612&w=0&h=G0kLh4TEldm1O3CYE9R5Jtu3whljGvkDB0BEJ_2fPSs=", alt: "Pomodoro" %>
+              <strong> Apply Pomodoro </strong>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="program-card">
+              <%= image_tag "https://media.istockphoto.com/vectors/smiling-girl-sends-messages-via-smartphone-young-happy-woman-uses-a-vector-id1253717027?k=20&m=1253717027&s=612x612&w=0&h=ZkeMP5DRvjeXQHhPOBRx0MmLBfw7gcOTTvmVtK4pXK4=", alt: "Log your tasks" %>
+              <strong> Log your tasks </strong>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="program-card">
+              <%= image_tag "https://media.istockphoto.com/vectors/young-woman-goes-through-her-datebook-in-the-morning-and-plans-her-vector-id1189072996?k=20&m=1189072996&s=612x612&w=0&h=3L7vCpUiCKcOHoREaVOXaWu35lmYcRPufbj1pYUzycg=", alt: "Mood Diary" %>
+              <strong> Mood Diary </strong>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="program-card">
+              <%= image_tag "https://media.istockphoto.com/vectors/romantic-girl-with-flying-hair-is-watering-the-potted-flowers-vector-id1095494470?k=20&m=1095494470&s=612x612&w=0&h=aAAvXCvrQy32EBgF-prIHLgLAVhky-r9gfEvS2ZXpG8=",
+                alt:"Apply Pomodoro"%>
+              <strong> Wellness </strong>
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="program-card">
+              <%= image_tag "https://media.istockphoto.com/vectors/african-american-businesswoman-plans-work-and-sets-the-task-vector-id1273896909?k=20&m=1273896909&s=612x612&w=0&h=UJKiJBSBTXkp8sEQzAJNjwxVxuv5Y7gvjj9IsEyqMDQ=",
+                alt: "Log your tasks"%>
+              <strong> Productivity </strong>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="program-card">
+              <%= image_tag "https://media.istockphoto.com/vectors/woman-in-depression-with-bewildered-thoughts-in-her-mind-vector-id1153386698?k=20&m=1153386698&s=612x612&w=0&h=8YWW0IpyLIXA-RH70CgxwefFA_ZpaHfKa8FajMtQ56o=", alt: "Mental clarity" %>
+              <strong> Mental clarity </strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </section>
+
+  <aside class="subscription">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="subscription-image">
+              <%= image_tag "https://media.istockphoto.com/vectors/smiling-woman-sitting-at-computer-writing-messages-and-icons-in-vector-id1160905368?k=20&m=1160905368&s=612x612&w=0&h=l69wRLzqrC9VC6VsBaw2YYMMcko059iYtV9zr4LHYK4=", alt: "email-img" %>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <h2 class="subscription-title">Stay with us</h2>
+            <p class="subscription-desc">
+              Subscribe to our email newsletter to stay up to date on the latest
+              updates
+            </p>
+            <form class="subscription-form">
+              <input type="email" placeholder="Enter your Email" />
+              <button type="button" class="fill-btn inverted" data-toggle="modal" data-target="#exampleModal">Get started</button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Submitted!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+  </aside>
