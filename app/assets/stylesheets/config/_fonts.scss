@@ -10,10 +10,10 @@ $headers-font: 'Canela', bold;
 
 @font-face {
   font-family: "Canela Regular";
-  src: url("/db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.woff") format("woff");
+  src: font_url("/db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.woff") format("woff");
 }
 
 @font-face {
   font-family: "Canela Bold";
-  src: url("/db.onlinewebfonts.com/t/3def92f7b2ad644bd382798ecc8ca4c7.woff") format("woff"),
+  src: font_url("/db.onlinewebfonts.com/t/3def92f7b2ad644bd382798ecc8ca4c7.woff") format("woff"),
 }
