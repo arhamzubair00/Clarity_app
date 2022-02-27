@@ -38,26 +38,59 @@
   justify-content: space-between;
   align-items: center;
   margin: 5px 0;
+}
+
+.task-list-title {
   border: 1px solid $darkblue;
   border-radius: 25px;
   background-color: white;
-  padding-right: 5px;
-  padding-left: 5px;
+  width: 84%;
+  left: 40px;
 }
 
-.btn.task-list-item.active {
-  color: white;
+.task-title p {
+  text-align: center;
+  margin: 0;
+}
+
+.btn.task-list-title.active {
   background-color: $darkblue;
 }
 
-.task-list-item:hover {
+.btn.task-list-title.active p {
+    color: white;
+}
+
+.task-list-title:hover {
   background-color: $midblue;
 }
 
+.btn.task-list-title.active:hover {
+  background-color: $midblue;
+}
+
+.btn.task-list-title.disabled:hover {
+  background-color: $midblue;
+}
+
+.btn-task-delete {
+  font-size: 16px;
+  color: #EB474D;
+  position: relative;
+  //right: 24px;
+  bottom: 2px;
+}
+
+.btn-task-delete:hover {
+  color: #931015;
+}
+
 .btn-task-edit {
-  border-radius: 20px;
-  font-size: 12px;
-  border: 1px solid white;
+  font-size: 16px;
+  color: $darkblue;
+  position: relative;
+  //right: 24px;
+  bottom: 2px;
 }
 
 .btn-new-task:hover {
@@ -72,7 +105,11 @@
 .btn-new-task a:hover {
   color: white;
 }
-.btn-mid-blue a:hover, .btn-task-edit a:hover {
+.btn-mid-blue a:hover {
+  color: black;
+}
+
+.btn-task-edit:hover {
   color: black;
 }
 
@@ -106,15 +143,33 @@
 
 .task-todo {
   background-color: lightgray;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border-radius: 15px;
+  border: 1px solid white;
+}
+
+.task-todo:hover {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border: 1px solid grey;
 }
 
 .task-done {
-  background-color: $darkblue;
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  border: 1px solid white;
+  color: $darkblue;
+  border: 0;
+  font-size: 25px;
+  height: 25px;
+  background: none;
+  padding: 0;
+}
+
+.task-done i {
+    position: relative;
+  bottom: 4px;
+}
+
+.task-done:hover {
+  color: $midblue;
 }

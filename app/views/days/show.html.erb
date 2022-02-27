@@ -13,20 +13,28 @@
         </div>
         <div class="task-list" id="task-list">
           <% @tasks.sort_by{ |task| task.id }.each  do |task| %>
-            <div class="btn task-list-item">
+          <div class="task-list-item">
               <div class="task-status">
-                <% if task.status == true %>
-                  <div class="task-done"></div>
-                <% else %>
-                  <div class="task-todo"></div>
+                <div><%= render "task_status_form", task: task %></div>
+              </div>
+              <% if task.status == true %>
+                <div class="btn task-list-title disabled">
+                  <div class="task-title"><p><%= task.title %></p></div>
+                </div>
+              <% else %>
+                <div class="btn task-list-title">
+                  <div class="task-title"><p><%= task.title %></p></div>
+                </div>
+              <% end %>
+              <div class="task-edit">
+                <%= link_to edit_day_task_path(task.id, day_id: @day.id), class: "btn-task-edit" do %>
+                  <i class="fas fa-edit"></i>
                 <% end %>
               </div>
-              <div class="task-title"><%= task.title %></div>
-              <div class="task-edit">
-                <div class="btn btn-info btn-task-edit">
-                  <%= link_to "Edit", edit_day_task_path(task.id, day_id: @day.id)%>
-                </div>
-                <%# <i class="fa-solid fa-pen-to-square"></i> %>
+              <div class="task-delete">
+                <%= link_to day_task_path(task.id, day_id: @day.id), class: "btn-task-delete", method: :delete do %>
+                  <i class="fas fa-trash-alt"></i>
+                <% end %>
               </div>
             </div>
           <% end  %>
@@ -41,7 +49,7 @@
 var btnContainer = document.getElementById("task-list");
 
 // Get all buttons with class="btn" inside the container
-var btns = btnContainer.getElementsByClassName("task-list-item");
+var btns = btnContainer.getElementsByClassName("task-list-title");
 
 // Loop through the buttons and add the active class to the current/clicked button
 for (var i = 0; i < btns.length; i++) {

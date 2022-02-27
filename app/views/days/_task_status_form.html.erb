@@ -1,9 +1,13 @@
-<%= simple_form_for [@day, @task] do |f| %>
-  <% if @task.status == 0 %>
-    <%= f.hidden_field :status, value: 1 %>
-    <%= f.submit 'Submit', class: "task-todo" %>
+<%= simple_form_for [@day, task] do |f| %>
+  <% if task.status == false %>
+    <%= f.hidden_field :status, value: true %>
+    <%= f.submit ' ', class: "task-todo" %>
   <% else %>
-    <%= f.hidden_field :status, value: 0 %>
-    <%= f.submit 'Submit', class: "task-done" %>
+    <%= f.hidden_field :status, value: false %>
+    <div>
+      <%= button_tag type: 'submit', class: "task-done" do %>
+          <i class="fas fa-check-circle"></i>
+      <% end %>
+    </div>
   <% end %>
 <% end %>
