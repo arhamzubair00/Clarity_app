@@ -1,0 +1,9 @@
+<%= simple_form_for [@day, @task] do |f| %>
+  <% if @task.status == 0 %>
+    <%= f.hidden_field :status, value: 1 %>
+    <%= f.submit 'Submit', class: "task-todo" %>
+  <% else %>
+    <%= f.hidden_field :status, value: 0 %>
+    <%= f.submit 'Submit', class: "task-done" %>
+  <% end %>
+<% end %>

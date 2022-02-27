@@ -1,5 +1,12 @@
-  <%= simple_form_for [@day, @task] do |f| %>
-    <%= f.input :title %>
+<%= simple_form_for [@day, @task] do |f| %>
+  <%= f.input :title %>
+  <% if @task.id != nil %>
     <%= f.input :status %>
-    <%= f.submit %>
   <% end %>
+  <div>
+    <%= f.submit 'Submit', class: "btn btn-peach" %>
+    <div class="btn btn-mid-blue">
+      <%= link_to "Cancel", day_path(id: @day.id)%>
+    </div>
+    </div>
+<% end %>
