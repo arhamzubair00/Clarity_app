@@ -2,6 +2,7 @@
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="day-component col-md-8">
+        <%# "strftime" formats date according to the directives in the given format string. %>
         <h2><%= @day.calendar_date.strftime('%a, %d %b %Y') %></h2>
         <div class="pomo">
           <p>00:00</p>
@@ -10,7 +11,7 @@
         <div class="btn btn-new-task">
           <%= link_to "Add new task", new_day_task_path(day_id: @day.id)%>
         </div>
-        <div class="task-list">
+        <div class="task-list" id="task-list">
           <% @tasks.sort_by{ |task| task.id }.each  do |task| %>
             <div class="btn task-list-item">
               <div class="task-status">
@@ -34,3 +35,26 @@
     </div>
   </div>
 </div>
+
+<script>
+// Get the container element
+var btnContainer = document.getElementById("task-list");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("task-list-item");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+
+    // If there's no active class
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(" active", "");
+    }
+
+    // Add the active class to the current/clicked button
+    this.className += " active";
+  });
+}
+</script>
