@@ -8,6 +8,6 @@ class DaysController < ApplicationController
   def show
     @day = Day.find(params[:id])
     @tasks = Task.select { |task| task.day == @day}
-
+    @task = Task.new
   end
 end

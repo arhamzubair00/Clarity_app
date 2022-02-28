@@ -9,11 +9,11 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @day = selected_day
     @task.day = @day
-    if @task.save!
+    if @task.save
       redirect_to day_path(@day)
     else
       #if the task doesnt save, reload the new task page
-      render :new
+      render 'days/show'
     end
   end
 
