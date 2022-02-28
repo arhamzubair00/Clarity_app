@@ -5,11 +5,7 @@
   font-family: 'Playfair Display', serif;
 }
 
-html {
-  font-size:62.5%;
-}
-
-.container {
+.calendar_container {
   width: 100%;
   height: 100%;
   background-color: white;
@@ -37,11 +33,19 @@ html {
 }
 
 .month i {
+  color: #EF9D82;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.month i:hover {
+  color: #456fab;
   font-size: 2.5rem;
   cursor: pointer;
 }
 
 .month h1 {
+  color: #EF9D82;
   font-size: 3rem;
   font-weight: 400;
   text-transform: uppercase;
@@ -51,6 +55,7 @@ html {
 
 .month p {
   font-size: 1.6rem;
+  color: #EF9D82;
 }
 
 .weekdays {
@@ -69,6 +74,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #456fab;
 }
 
 .days {
@@ -87,19 +93,23 @@ html {
   justify-content: center;
   align-items: center;
   transition: background-color 0.2s;
+  border-style: solid;
+  border-color: #EF9D82;
+
 }
 
 .days div:hover:not(.today) {
   background-color: white;
-  border: 0.2rem solid #777;
+  border: 0.2rem solid #456fab;
   cursor: pointer;
 }
 
 .prev-date,
 .next-date {
-opacity: 0.5;
+  opacity: 0.5;
 }
 
 .today {
-  background-color: #d9defd;
+  color:#456fab;
+  background-color: #EF9D82;
 }
