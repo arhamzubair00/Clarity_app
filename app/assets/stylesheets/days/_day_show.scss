@@ -1,0 +1,175 @@
+.day-show {
+  background-color: $peach !important;
+  display: flex;
+  min-height: 90vh;
+}
+
+.btn-peach {
+  border-radius: 5px;
+  background-color: $peach;
+  color: white;
+}
+
+.btn-mid-blue {
+  border-radius: 5px;
+  background-color: $midblue;
+  color: white;
+}
+
+.btn-new-task {
+  position: absolute;
+  right: 25px;
+  top: 185px;
+  border-radius: 25px;
+  border: 1px solid $darkblue;
+  //background-color: $darkblue;
+  color: $darkblue;
+  font-size: 12px;
+}
+
+.task-list {
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.task-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.task-list-title {
+  border: 1px solid $darkblue;
+  border-radius: 25px;
+  background-color: white;
+  width: 84%;
+  left: 40px;
+}
+
+.task-title p {
+  text-align: center;
+  margin: 0;
+}
+
+.btn.task-list-title.active {
+  background-color: $darkblue;
+}
+
+.btn.task-list-title.active p {
+    color: white;
+}
+
+.task-list-title:hover {
+  background-color: $midblue;
+}
+
+.btn.task-list-title.active:hover {
+  background-color: $midblue;
+}
+
+.btn.task-list-title.disabled:hover {
+  background-color: $midblue;
+}
+
+.btn-task-delete {
+  font-size: 16px;
+  color: #EB474D;
+  position: relative;
+  //right: 24px;
+  bottom: 2px;
+}
+
+.btn-task-delete:hover {
+  color: #931015;
+}
+
+.btn-task-edit {
+  font-size: 16px;
+  color: $darkblue;
+  position: relative;
+  //right: 24px;
+  bottom: 2px;
+}
+
+.btn-new-task:hover {
+  background-color: $darkblue;
+  color: white;
+}
+
+.btn-new-task a:link, .btn-mid-blue a:link, .btn-task-edit a:link {
+  text-decoration: none;
+}
+
+.btn-new-task a:hover {
+  color: white;
+}
+.btn-mid-blue a:hover {
+  color: black;
+}
+
+.btn-task-edit:hover {
+  color: black;
+}
+
+.day-component {
+ // justify-content:center;
+  margin: 10% 0;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.day-component h2 {
+  text-align: center !important;
+  color: $darkblue;
+  margin-top: 15px;
+}
+
+.pomo {
+  color: $darkblue;
+  text-align: center !important;
+}
+
+.pomo p {
+ font-size: 70px;
+}
+
+.task-title {
+  font-size: 20px;
+  text-align: left;
+}
+
+.task-todo {
+  background-color: lightgray;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  border: 1px solid white;
+}
+
+.task-todo:hover {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border: 1px solid grey;
+}
+
+.task-done {
+  color: $darkblue;
+  border: 0;
+  font-size: 25px;
+  height: 25px;
+  background: none;
+  padding: 0;
+}
+
+.task-done i {
+    position: relative;
+  bottom: 4px;
+}
+
+.task-done:hover {
+  color: $midblue;
+}

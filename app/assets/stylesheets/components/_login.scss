@@ -1,0 +1,29 @@
+.login-page {
+  background-color: $darkblue;
+  height: 100vh;
+  display: flex;
+  padding: 100px auto;
+}
+
+.login-content {
+  padding: 100px 200px;
+  color: #ffff;
+}
+
+.login-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 56px;
+  font-size: 18px;
+  border-radius: 2px;
+  line-height: 1.5555555556;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+  color: $white;
+  background-color: $peach;
+  transition: opacity 300ms ease-in-out;
+  border: none;
+  margin-bottom: 20px;
+}

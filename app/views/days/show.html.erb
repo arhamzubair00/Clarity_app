@@ -1,0 +1,68 @@
+<div class="day-show">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="day-component col-md-8">
+        <%# "strftime" formats date according to the directives in the given format string. %>
+        <h2><%= @day.calendar_date.strftime('%a, %d %b %Y') %></h2>
+        <div class="pomo">
+          <p>00:00</p>
+          <div class="btn btn-peach">Start</div>
+        </div>
+        <div class="btn btn-new-task">
+          <%= link_to "Add new task", new_day_task_path(day_id: @day.id)%>
+        </div>
+        <div class="task-list" id="task-list">
+          <% @tasks.sort_by{ |task| task.id }.each  do |task| %>
+          <div class="task-list-item">
+              <div class="task-status">
+                <div><%= render "task_status_form", task: task %></div>
+              </div>
+              <% if task.status == true %>
+                <div class="btn task-list-title disabled">
+                  <div class="task-title"><p><%= task.title %></p></div>
+                </div>
+              <% else %>
+                <div class="btn task-list-title">
+                  <div class="task-title"><p><%= task.title %></p></div>
+                </div>
+              <% end %>
+              <div class="task-edit">
+                <%= link_to edit_day_task_path(task.id, day_id: @day.id), class: "btn-task-edit" do %>
+                  <i class="fas fa-edit"></i>
+                <% end %>
+              </div>
+              <div class="task-delete">
+                <%= link_to day_task_path(task.id, day_id: @day.id), class: "btn-task-delete", method: :delete do %>
+                  <i class="fas fa-trash-alt"></i>
+                <% end %>
+              </div>
+            </div>
+          <% end  %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Get the container element
+var btnContainer = document.getElementById("task-list");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("task-list-title");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+
+    // If there's no active class
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(" active", "");
+    }
+
+    // Add the active class to the current/clicked button
+    this.className += " active";
+  });
+}
+</script>

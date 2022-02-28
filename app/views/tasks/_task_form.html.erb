@@ -1,0 +1,9 @@
+<%= simple_form_for [@day, @task] do |f| %>
+  <%= f.input :title %>
+  <div>
+    <%= f.submit 'Submit', class: "btn btn-peach" %>
+    <div class="btn btn-mid-blue">
+      <%= link_to "Cancel", day_path(id: @day.id)%>
+    </div>
+    </div>
+<% end %>

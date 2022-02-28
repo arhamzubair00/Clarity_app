@@ -12,14 +12,18 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 
     <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/3def92f7b2ad644bd382798ecc8ca4c7?family=Canela" type="text/css"/>
+    <script src="https://kit.fontawesome.com/56be5d596f.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <div class="c-container">
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
 
-    <%= yield %>
-
-    <%= render 'shared/footer' %>
+      <%= yield %>
+    </div>
+    <div class="c-footer">
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>
