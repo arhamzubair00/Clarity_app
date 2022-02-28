@@ -1,0 +1,29 @@
+<section class="mood-section">
+
+  <div class="container mood-container">
+
+    <div class="d-flex justify-content-center" id="mood-log">
+      <h1 color="white">Mood Log</h1>
+    </div>
+
+    <div class="moods-container">
+    <div class="justify-content: flex-start"><h4>Most recent</h4></div>
+      <div class="mood-board">
+        <% @moods.each do |mood|  %>
+
+        <div id="date-notes-emoji" class='d-flex justify-content: space-between'>
+
+          <div class="mood-data"><p> <%= mood.day.calendar_date %> </p></div>
+
+          <div><p class='mx-3'> <%= mood.mood_notes %> Add some mood notes. I ak not feeling great today. FFs</p></div>
+
+          <div><p><%= mood.mood_name %></p></div>
+
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+</section>

@@ -11,7 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+@import "moods/import";
 @import "days/index";
+
 
 body{
  width: 100%;
@@ -26,3 +30,4 @@ flex-grow: 1;
 .c-footer{
 flex-grow: 0;
 }
+

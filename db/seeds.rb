@@ -19,6 +19,7 @@ day1 = Day.create!(:calendar_date => Date.new(2022,1,1), :user_id => user.id )
 day = 1
 365.times do
 
+
   newDay = Day.create!(:calendar_date => day1.calendar_date + day, :user_id => user.id )
   if newDay.save
     puts "Day #{day} added"
