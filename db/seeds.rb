@@ -8,32 +8,36 @@
 
 require 'faker'
 
+user = User.create!(:firstname => Faker::Name.first_name, :lastname => Faker::Name.last_name, :email => "jolynn@tremblay.com", :password => 'topsecret', :password_confirmation => 'topsecret')
+  if user.save
+    puts "User added"
+  else
+    puts "Failed"
+  end
 
-  user1 = User.create!(:firstname => Faker::Name.first_name, :lastname => Faker::Name.last_name, :email => Faker::Internet.email, :password => 'topsecret', :password_confirmation => 'topsecret')
-  day1 = Day.create!(:calendar_date => Date.today, :user_id => user1.id )
-  happy_mood = Mood.create!(mood_name: 'Happy', day: day1 )
-  task1 = Task.create!(title: 'Get out of bed', day: day1)
-
-  user2 = User.create!(:firstname => Faker::Name.first_name, :lastname => Faker::Name.last_name, :email => Faker::Internet.email, :password => 'topsecret', :password_confirmation => 'topsecret')
-  day2 = Day.create!(:calendar_date => Date.today, :user_id => user2.id )
-  sad_mood = Mood.create!(mood_name: 'Sad', day: day2 )
-  task2 = Task.create!(title: 'Make some coffee', day: day2)
-
-  # if user.save
-  #   puts "User added"
-  # else
-  #   puts "Failed"
-  # end
+day1 = Day.create!(:calendar_date => Date.new(2022,1,1), :user_id => user.id )
+day = 1
+365.times do
 
 
-day = Day.create!(:calendar_date => Date.today, :user_id => user.id )
-# day2 = Day.create!(:calendar_date => Date.today, :user_id => user2.id )
+  newDay = Day.create!(:calendar_date => day1.calendar_date + day, :user_id => user.id )
+  if newDay.save
+    puts "Day #{day} added"
+  else
+    puts "Failed"
+  end
+  day = day + 1
+end
+
+happy_mood = Mood.create!(mood_name: 'Happy', day: day1 )
+if happy_mood.save
+    puts "Mood added"
+  else
+    puts "Failed"
+  end
 
 
-happy_mood = Mood.create!(mood_name: 'Happy', day: day )
-sad_mood = Mood.create!(mood_name: 'Sad', day: day )
-
-task1 = Task.create!(title: 'Get out of bed', day: day)
-task1 = Task.create!(title: 'Make bed', day: day)
-task1 = Task.create!(title: 'Shower', day: day)
-task1 = Task.create!(title: 'Start essay outline', day: day)
+task1 = Task.create!(title: 'Get out of bed', day: day1)
+task2 = Task.create!(title: 'Make bed', day: day1)
+task3 = Task.create!(title: 'Shower', day: day1)
+task4 = Task.create!(title: 'Start essay outline', day: day1)

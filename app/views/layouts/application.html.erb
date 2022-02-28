@@ -16,11 +16,14 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <div class="c-container">
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
 
-    <%= yield %>
-
-    <%= render 'shared/footer' %>
+      <%= yield %>
+    </div>
+    <div class="c-footer">
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>

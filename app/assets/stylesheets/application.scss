@@ -16,3 +16,18 @@
 @import "moods/import";
 @import "days/index";
 
+
+body{
+ width: 100%;
+ min-height: 90vh;
+ display: flex;
+ flex-direction: column;
+}
+.c-container{
+flex-grow: 1;
+}
+
+.c-footer{
+flex-grow: 0;
+}
+
