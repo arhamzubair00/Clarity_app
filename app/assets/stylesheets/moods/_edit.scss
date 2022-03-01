@@ -1,0 +1,73 @@
+.mood-edit {
+  background-color: $darkblue;
+  color: $white;
+  height: 100vh;
+  display: flex;
+  padding: 100px auto;
+}
+
+.mood-edit-form {
+}
+
+.mood-edit-content {
+  padding: 100px 150px;
+  text-align: center;
+  color: transparent;
+}
+
+.mood-edit-title {
+  color: $white;
+  font-size: 50px;
+}
+
+.mood-edit-content textarea {
+  display: inline-block;
+  height: 200px;
+  border: 5px solid $peach;
+  border-radius: 30px;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none; /*remove the resize handle on the bottom right*/
+  padding: 18px;
+}
+
+// .mood-edit-input {
+//   display: inline-block;
+
+//   height: 200px;
+// }
+.mood-edit-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 56px;
+  font-size: 18px;
+  border-radius: 2px;
+  line-height: 1.5555555556;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+  color: $white;
+  background-color: $peach;
+  transition: opacity 300ms ease-in-out;
+  border: none;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.mood-edit-btn:hover {
+  opacity: 0.5;
+}
+
+.mood-edit-btn-inverted {
+  background-color: #d9defd;
+  color: $peach;
+}
+
+.mood-edit-btn-inverted a:hover {
+  text-decoration: none;
+  color: $peach;
+}
