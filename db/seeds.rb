@@ -53,5 +53,3 @@ task1 = Task.create!(title: 'Call supplier for delivery details', day: Day.find(
 task2 = Task.create!(title: 'Make bed', day: Day.find(60))
 task3 = Task.create!(title: 'Shower', day: Day.find(60))
 task4 = Task.create!(title: 'Start essay outline', day: Day.find(60))
-
-
