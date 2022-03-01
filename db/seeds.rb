@@ -15,28 +15,31 @@ user = User.create!(:firstname => Faker::Name.first_name, :lastname => Faker::Na
     puts "Failed"
   end
 
-day1 = Day.create!(:calendar_date => Date.new(2022,1,1), :user_id => user.id )
+day1 = Date.new(2022,1,1)
 day = 1
 365.times do
 
-  newDay = Day.create!(:calendar_date => day1.calendar_date + day, :user_id => user.id )
+  newDay = Day.create!(:calendar_date => day1 + day, :user_id => user.id )
   if newDay.save
     puts "Day #{day} added"
   else
     puts "Failed"
   end
-  day = day + 1
-end
 
-happy_mood = Mood.create!(mood_name: 'Happy', day: day1 )
-if happy_mood.save
-    puts "Mood added"
+  happy_mood = Mood.create!(day: newDay )
+  if happy_mood.save
+    puts "Mood #{day} added"
   else
     puts "Failed"
   end
 
+  day = day + 1
+end
 
-task1 = Task.create!(title: 'Get out of bed', day: day1)
-task2 = Task.create!(title: 'Make bed', day: day1)
-task3 = Task.create!(title: 'Shower', day: day1)
-task4 = Task.create!(title: 'Start essay outline', day: day1)
+
+
+
+task1 = Task.create!(title: 'Get out of bed', day: Day.find(60))
+task2 = Task.create!(title: 'Make bed', day: Day.find(60))
+task3 = Task.create!(title: 'Shower', day: Day.find(60))
+task4 = Task.create!(title: 'Start essay outline', day: Day.find(60))
