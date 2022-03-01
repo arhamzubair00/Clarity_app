@@ -4,4 +4,6 @@ class Mood < ApplicationRecord
   validates :mood_name, presence: true
   validates :day_id, presence: true, uniqueness: true
   # validates :mood_name, :inclusion { :in => [ '😡', '😢', '😟', '😐', '🙂', '😍' ] }
+
+  MOODS =  [ '😡', '😢', '😟', '😐', '🙂', '😍' ]
 end

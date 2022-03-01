@@ -25,7 +25,7 @@ class MoodsController < ApplicationController
     @day = current_day
     @mood.day = @day
     if @mood.save!
-    # redirect_to day_path(@day)
+    #redirect_to day_path(@day)
     else
       #if the mood doesnt save, reload the new mood page
       render :new
@@ -40,7 +40,13 @@ class MoodsController < ApplicationController
   #Update
   def update
     @mood = Mood.find(params[:id])
-    @mood.update(params[:mood])
+    @mood.update(mood_params)
+    if @mood.save!
+      redirect_to days_path
+    else
+      #if the mood doesnt save, reload the new mood page
+      render :edit
+    end
   end
 
 

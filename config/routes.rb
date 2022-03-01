@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :days, only: [:index, :show] do
     resources :tasks, except: [ :index ]
   end
-  resources :moods, only: [:index, :new, :edit, :show]
+  resources :moods, only: [:index, :edit, :show, :update]
 end
