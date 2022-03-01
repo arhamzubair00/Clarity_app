@@ -3,6 +3,14 @@ class MoodsController < ApplicationController
   #Index
   def index
     @moods = Mood.all
+    # instead of displaying all the moods,
+    # @min_range = 1
+    # @max_range = 10
+    # @moods = Mood.find(@min_range..@max_range)
+    # when the next page button is clicked, it should change
+    # min_range and max_range to +10
+    # previous button on the next page - just does the opposit of ^^ (minuses)
+    # previous button hidden until we are on next poage
   end
 
   #New
@@ -17,7 +25,7 @@ class MoodsController < ApplicationController
     @day = current_day
     @mood.day = @day
     if @mood.save!
-    # redirect_to day_path(@day)
+    #redirect_to day_path(@day)
     else
       #if the mood doesnt save, reload the new mood page
       render :new
@@ -32,7 +40,13 @@ class MoodsController < ApplicationController
   #Update
   def update
     @mood = Mood.find(params[:id])
-    @mood.update(params[:mood])
+    @mood.update(mood_params)
+    if @mood.save!
+      redirect_to days_path
+    else
+      #if the mood doesnt save, reload the new mood page
+      render :edit
+    end
   end
 
 

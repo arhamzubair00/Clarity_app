@@ -1,0 +1,31 @@
+.mood-section {
+  background-color: $peach;
+  min-height: 90vh;
+}
+
+.mood-log-text {
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.mood-date, .mood-notes, .mood-emoji {
+  display: flex;
+  background-color: white;
+  border: 1px solid $midblue;
+  border-radius: 25px;
+  justify-content: center;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.task-row {
+display: grid;
+grid-template-rows: 1fr;
+grid-template-columns: 1fr 4fr 0.5fr;
+grid-template-areas: "mood-date mood-notes mood-emoji";
+padding: 5px 0;
+}
