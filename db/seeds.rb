@@ -10,35 +10,32 @@ require 'faker'
 
 # User
 user = User.create!(:firstname => Faker::Name.first_name, :lastname => Faker::Name.last_name, :email => "arham@tremblay.com", :password => 'topsecret', :password_confirmation => 'topsecret')
-  if user.save
-    puts "User added"
-  else
-    puts "Failed"
-  end
+if user.save
+  puts "User added"
+else
+  puts "Failed"
+end
 
-
-day1 = Date.new(2022,1,1)
+day1 = Date.new(2022, 1, 1)
 day = 1
 365.times do
-
   newDay = Day.create!(:calendar_date => day1 + day, :user_id => user.id )
 
   if newDay.save
-    puts "Day #{day_and_mood} added"
+    puts "Day #{day} added"
   else
     puts "Failed"
   end
 
-  happy_mood = Mood.create!(day: newDay )
+  happy_mood = Mood.create!(day: newDay)
   if happy_mood.save
     puts "Mood #{day} added"
   else
     puts "Failed"
   end
 
-  day = day + 1
+  day = day += 1
 end
-
 
 angry = '😡'
 sad = '😢'
