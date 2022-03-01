@@ -3,6 +3,14 @@ class MoodsController < ApplicationController
   #Index
   def index
     @moods = Mood.all
+    # instead of displaying all the moods,
+    # @min_range = 1
+    # @max_range = 10
+    # @moods = Mood.find(@min_range..@max_range)
+    # when the next page button is clicked, it should change
+    # min_range and max_range to +10
+    # previous button on the next page - just does the opposit of ^^ (minuses)
+    # previous button hidden until we are on next poage
   end
 
   #New
