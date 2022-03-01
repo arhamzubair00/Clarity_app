@@ -1,14 +1,15 @@
 <div class="day-show">
   <div class="container">
     <div class="row justify-content-md-center">
-    <div><%= @mood.mood_name %></div>
       <div class="day-component col-md-8">
         <%# "strftime" formats date according to the directives in the given format string. %>
         <h2><%= @day.calendar_date.strftime('%a, %d %b %Y') %></h2>
-        <div class="pomo">
-          <p>00:00</p>
-          <div class="btn btn-peach">Start</div>
-        </div>
+        <% if @day.calendar_date == Date.today %>
+          <div class="pomo">
+            <p>00:00</p>
+            <div class="btn btn-peach">Start</div>
+          </div>
+        <% end %>
         <div class="task-list" id="task-list">
           <% if @tasks.blank? %>
             <div class="task-empty-message">Add your first task of the day.</div>
@@ -43,11 +44,13 @@
           <div class="btn btn-new-task">
             <%= link_to "Add new task", new_day_task_path(day_id: @day.id)%>
           </div>
+          <div id="hidden" hidden>
+            <%= simple_form_for([@day, @task], remote: true) do |f| %>
+              <%= f.input :title, :input_html => { :class => "task-list-title" }  %>
+              <%= f.submit 'Confirm', class: "btn btn-new-task" %>
+            <% end %>
+          </div>
         </div>
-      <%= simple_form_for([@day, @task], remote: true) do |f| %>
-        <%= f.input :title %>
-        <%= f.button :submit, class: "btn btn-new-task" %>
-      <% end %>
       </div>
     </div>
   </div>

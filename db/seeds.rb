@@ -39,7 +39,7 @@ end
 
 
 
-task1 = Task.create!(title: 'Get out of bed', day: Day.find(60))
+task1 = Task.create!(title: 'Call supplier for delivery details', day: Day.find(60))
 task2 = Task.create!(title: 'Make bed', day: Day.find(60))
 task3 = Task.create!(title: 'Shower', day: Day.find(60))
 task4 = Task.create!(title: 'Start essay outline', day: Day.find(60))
