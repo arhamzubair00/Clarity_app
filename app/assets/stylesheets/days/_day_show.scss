@@ -17,19 +17,22 @@
 }
 
 .btn-new-task {
-  position: absolute;
-  right: 25px;
-  top: 185px;
+  position: relative;
+  //right: 25px;
+  bottom: 0;
   border-radius: 25px;
   border: 1px solid $darkblue;
-  //background-color: $darkblue;
-  color: $darkblue;
+  background-color: $darkblue;
+  color: white;
   font-size: 12px;
+  margin: 22px 0;
 }
 
 .task-list {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
-  justify-content: space-around;
+  align-items: center;
 }
 
 .task-list-item {
@@ -38,6 +41,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 5px 0;
+  width: 100%;
 }
 
 .task-list-title {
@@ -46,10 +50,11 @@
   background-color: white;
   width: 84%;
   left: 40px;
+  padding-left: 15px;
 }
 
 .task-title p {
-  text-align: center;
+  text-align: left;
   margin: 0;
 }
 
@@ -94,8 +99,8 @@
 }
 
 .btn-new-task:hover {
-  background-color: $darkblue;
-  color: white;
+  background-color: white;
+  color: $darkblue;
 }
 
 .btn-new-task a:link, .btn-mid-blue a:link, .btn-task-edit a:link {
@@ -103,7 +108,7 @@
 }
 
 .btn-new-task a:hover {
-  color: white;
+  color: $darkblue;
 }
 .btn-mid-blue a:hover {
   color: black;
@@ -166,10 +171,25 @@
 }
 
 .task-done i {
-    position: relative;
+  position: relative;
   bottom: 4px;
 }
 
 .task-done:hover {
   color: $midblue;
+}
+
+#new_task {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#new_task .btn-new-task {
+  bottom: -7px;
+}
+
+#new_task .task-list-title {
+  width: auto;
+  height: 46px;
 }
