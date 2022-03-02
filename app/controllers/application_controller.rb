@@ -10,12 +10,21 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    days_path
+    @current_day = Day.where(calendar_date: Date.today)
+    @mood = Mood.where(day_id: @current_day)
+    raise
+    # if @mood.mood_name.empty?
+    #  redirect_to days_path
+    # # # else
+    # # # days_path
+    # end
+
+    # days_path
     # @current_day = Day.where("calendar_date == #{Date.today}")
-    # raise
+    # # raise
     # @mood = Mood.where("day_id == #{@current_day.id}")
     # if @mood.mood_name == ''
-    #   redirect_to edit_mood_path
+    #   redirect_to days_path
     # else
     #   days_path
     # end
