@@ -1,13 +1,41 @@
 .login-page {
-  background-color: $darkblue;
+  background-color: $white;
   height: 100vh;
   display: flex;
   padding: 100px auto;
 }
 
+.login-content .col-6:first-child {
+  text-align: left;
+}
+
 .login-content {
-  padding: 100px 200px;
+  display: flex;
+  flex-direction: row;
+  margin: 80px 0;
+  padding: 100px 30px;
+  background-color: $white;
   color: #ffff;
+  display: block;
+  border-radius: 50px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.05),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: background-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
+}
+
+.login-content h2 {
+  color: $darkblue;
+}
+
+.form-inputs label {
+  color: white;
+  font-size: 1px;
+  margin-bottom: 2px;
+}
+
+.form-inputs .form-group {
+  margin-bottom: 0;
 }
 
 .login-btn {
@@ -25,5 +53,29 @@
   background-color: $peach;
   transition: opacity 300ms ease-in-out;
   border: none;
-  margin-bottom: 20px;
+  margin: 20px 0;
+}
+
+.login-content .col-6 img {
+  margin-left: 30px;
+  width: 400px;
+  height: auto;
+}
+
+.signup-btn {
+  color: gray;
+  margin-top: 10px;
+}
+
+.form-inputs {
+  padding-right: 80px;
+}
+
+.sign-up-inputs {
+  width: 400px;
+  height: 300px;
+}
+
+.signup-content {
+  padding: 50px 30px 150px 30px;
 }
