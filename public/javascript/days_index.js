@@ -66,7 +66,6 @@ const renderCalendar = () => {
   })
 };
 
-
 document.querySelector(".prev").addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);
   renderCalendar();
