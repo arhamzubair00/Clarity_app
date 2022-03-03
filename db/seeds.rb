@@ -9,7 +9,7 @@
 require 'faker'
 
 # User
-user = User.create!(:firstname => Faker::Name.first_name, :lastname => Faker::Name.last_name, :email => "arham@tremblay.com", :password => 'topsecret', :password_confirmation => 'topsecret')
+user = User.create!(:firstname => Faker::Name.first_name, :lastname => Faker::Name.last_name, :email => "sophie@tremblay.com", :password => 'topsecret', :password_confirmation => 'topsecret')
 if user.save
   puts "User added"
 else
