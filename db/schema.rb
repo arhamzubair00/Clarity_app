@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2022_02_27_092258) do
 
   create_table "moods", force: :cascade do |t|
     t.bigint "day_id", null: false
-    t.string "mood_name", default: "&#128528"
+    t.string "mood_name", default: "#"
     t.text "mood_notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

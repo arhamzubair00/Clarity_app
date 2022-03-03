@@ -16,6 +16,7 @@ else
   puts "Failed"
 end
 
+# Day
 day1 = Date.new(2022, 1, 1)
 day = 1
 365.times do
