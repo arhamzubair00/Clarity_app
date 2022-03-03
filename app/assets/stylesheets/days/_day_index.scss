@@ -1,7 +1,9 @@
+
 .days-index {
   background-color: $darkblue;
   text-align: center;
   height: 600px;
+  align-items: center;
 }
 
 .index-welcome {
@@ -9,9 +11,10 @@
   flex-direction: column;
   align-items: left;
   width: 100%;
-  height: 100vh;
+  height: 50%;
   padding: 120px 0;
 }
+
 
 .welcome-message{
   color: $white;
