@@ -1,4 +1,4 @@
-.index-card{
+.task-card{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -38,4 +38,20 @@
   color: #888888;
   background-color: #CFE6EE;
   border-radius: 10px;
+}
+
+.card-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 40px;
+  font-size: 18px;
+  border-radius: 2px;
+  line-height: 1.5555555556;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #ef9d82;
+  transition: opacity 300ms ease-in-out;
 }
