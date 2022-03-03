@@ -1,0 +1,41 @@
+.index-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  border-radius: 30px;
+}
+
+.card-title {
+  font-size: 50px;
+  color: #888888;
+
+}
+
+.card-title-center {
+  font-size: 50px;
+}
+
+.card-body {
+  flex-direction: column;
+}
+
+.task {
+  flex-direction: column;
+  display: block;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #888888;
+  background-color: #CFE6EE;
+  border-radius: 10px;
+}
