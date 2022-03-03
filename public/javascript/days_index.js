@@ -47,14 +47,7 @@ const renderCalendar = () => {
 
   for (let i = 1; i <= lastDay; i++) {
     if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()) {
-      days += `
-      <div class="today day">
-        <div class="emoji">
-          &#128515
-        </div>
-
-        ${i}
-      </div>`;
+      days += `<div class="today day">${i}</div>`;
     } else {
       days += `<div class="day">${i}</div>`;
     }
