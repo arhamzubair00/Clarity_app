@@ -31,5 +31,13 @@ padding: 5px 0;
 }
 
 .search-btn {
-display: none;
+  display: none;
+}
+
+.some-text {
+   display: flex;
+  background-color: white;
+  border: 1px solid $midblue;
+  border-radius: 25px;
+  justify-content: center;
 }

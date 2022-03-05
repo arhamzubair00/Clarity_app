@@ -11,6 +11,7 @@
 
       <div class="mood-board">
         <% @moods.sort_by{ |mood| mood.id }.each do |mood|  %>
+
         <% if mood.mood_name != "#" %>
         <div class='task-row'>
           <div class="mood-date"><p><%= mood.day.calendar_date.strftime('%d %b %Y') %></p></div>
