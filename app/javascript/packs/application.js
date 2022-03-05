@@ -24,7 +24,7 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-import { moodEdit } from '../components/edit_mood';
+// import { moodEdit } from '../components/edit_mood';
 
 
 document.addEventListener('turbolinks:load', () => {
