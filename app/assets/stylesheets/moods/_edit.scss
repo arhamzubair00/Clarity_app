@@ -23,14 +23,6 @@ fieldset > div > label {
   font-size: 60px;
 }
 
-fieldset > div > label:hover {
-  font-size: 70px;
-}
-
-fieldset > div > label:focus {
-  font-size: 70px;
-}
-
 input[type="radio"]:checked + label {
   border-bottom: 3px solid $darkblue;
 }
