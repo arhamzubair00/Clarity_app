@@ -1,23 +1,71 @@
 .mood-edit {
   background-color: $darkblue;
   color: $white;
-  height: 100vh;
+  height: 110vh;
   display: flex;
   padding: 100px auto;
 }
 
-.mood-edit-form {
+// emoji box
+fieldset {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 180px;
+  height: 90px;
+}
+
+//emoji
+fieldset > div {
+  cursor: pointer;
+}
+fieldset > div > label {
+  font-size: 60px;
+}
+
+input[type="radio"]:checked + label {
+  border-bottom: 3px solid $darkblue;
+}
+
+// emoji try
+
+input[type="radio"] {
+  // display: none;
+
+  opacity: 0;
+  width: 100px;
+  height: 100px;
+}
+
+input[type="radio"] label {
+  display: inline-block;
+  background-color: #ddd;
+  padding: 10px 20px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border: 2px solid #444;
+  border-radius: 4px;
+}
+
+.form-check {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
 }
 
 .mood-edit-content {
-  padding: 100px 150px;
+  padding: 30px 10px;
   text-align: center;
   color: transparent;
 }
 
 .mood-edit-title {
-  color: $white;
-  font-size: 50px;
+  color: $darkblue;
+  font-size: 40px;
+}
+
+#edit_mood_1 > div {
+  padding: 0 100px;
 }
 
 .mood-edit-content textarea {
@@ -31,7 +79,15 @@
   -moz-box-shadow: none;
   box-shadow: none;
   resize: none; /*remove the resize handle on the bottom right*/
-  padding: 18px;
+  padding: 40px;
+}
+
+.form-control.is-valid {
+  border-color: $darkblue;
+}
+
+.form-control.is-valid:focus {
+  border-color: $darkblue;
 }
 
 // .mood-edit-input {
@@ -46,7 +102,7 @@
   width: 160px;
   height: 56px;
   font-size: 18px;
-  border-radius: 2px;
+  border-radius: 10px;
   line-height: 1.5555555556;
   letter-spacing: -0.05em;
   font-weight: 700;
@@ -56,6 +112,9 @@
   border: none;
   margin-bottom: 20px;
   text-decoration: none;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.05),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.1);
 }
 
 .mood-edit-btn:hover {
@@ -70,4 +129,19 @@
 .mood-edit-btn-inverted a:hover {
   text-decoration: none;
   color: $peach;
+}
+
+.mood-content {
+  display: flex;
+  flex-direction: row;
+  margin: 80px 0;
+  padding: 30px;
+  background-color: $white;
+  color: #ffff;
+  display: block;
+  border-radius: 50px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.05),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: background-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
 }
