@@ -10,7 +10,9 @@
               <p class="landing-desc">
                 A diary for the neurodiverse
               </p>
-              <button class="fill-btn"><%= link_to "Log-in", new_user_session_path %></button>
+              <% if !user_signed_in? %>
+                <button class="fill-btn"><%= link_to "Log-in", new_user_session_path %></button>
+              <% end %>
             </div>
           </div>
         </div>
