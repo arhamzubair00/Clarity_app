@@ -13,9 +13,14 @@
         <% @moods.sort_by{ |mood| mood.id }.each do |mood|  %>
         <% if mood.mood_name != "#" %>
         <div class='task-row'>
+
           <div class="mood-date"><p><%= mood.day.calendar_date.strftime('%d %b %Y') %></p></div>
-          <div class='mood-notes'><p><%= mood.mood_notes %></p></div>
-          <div class='mood-emoji'><p><%= mood.mood_name %></p></div>
+
+          <div class='mood-notes' onclick="location.href='#';" style="cursor: pointer;"><p><%= mood.mood_notes %></p></div>
+
+          <div class='mood-emoji' onclick="location.href='#';" style="cursor: pointer;"><p><%= mood.mood_name %></p></div>
+
+
         </div>
         <% end %>
 
