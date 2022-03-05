@@ -16,6 +16,9 @@ fieldset {
 }
 
 //emoji
+fieldset > div {
+  cursor: pointer;
+}
 fieldset > div > label {
   font-size: 60px;
 }
@@ -24,16 +27,38 @@ fieldset > div > label:hover {
   font-size: 70px;
 }
 
-#mood_mood_name_ {
+fieldset > div > label:focus {
+  font-size: 70px;
+}
+
+input[type="radio"]:checked + label {
+  border-bottom: 3px solid $darkblue;
+}
+
+// emoji try
+
+input[type="radio"] {
+  // display: none;
+
+  opacity: 0;
+  width: 100px;
+  height: 100px;
+}
+
+input[type="radio"] label {
   display: inline-block;
-  margin: 22px 0 22px 22px;
-  width: 70px;
-  height: 130px;
+  background-color: #ddd;
+  padding: 10px 20px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border: 2px solid #444;
+  border-radius: 4px;
 }
 
 .form-check {
   display: flex;
   flex-direction: column;
+  height: 100px;
 }
 
 .mood-edit-content {
@@ -63,6 +88,14 @@ fieldset > div > label:hover {
   box-shadow: none;
   resize: none; /*remove the resize handle on the bottom right*/
   padding: 40px;
+}
+
+.form-control.is-valid {
+  border-color: $darkblue;
+}
+
+.form-control.is-valid:focus {
+  border-color: $darkblue;
 }
 
 // .mood-edit-input {
