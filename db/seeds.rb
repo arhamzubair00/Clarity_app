@@ -9,34 +9,42 @@
 require 'faker'
 
 # User
-user = User.create!(:firstname => Faker::Name.first_name, :lastname => Faker::Name.last_name, :email => "sophie@tremblay.com", :password => 'topsecret', :password_confirmation => 'topsecret')
-if user.save
+user1 = User.create!(:firstname => Faker::Name.first_name, :lastname => Faker::Name.last_name, :email => "sophie@tremblay.com", :password => 'topsecret', :password_confirmation => 'topsecret')
+if user1.save
+  puts "User added"
+else
+  puts "Failed"
+end
+
+user2 = User.create!(:firstname => Faker::Name.first_name, :lastname => Faker::Name.last_name, :email => "anton@tremblay.com", :password => 'topsecret', :password_confirmation => 'topsecret')
+if user2.save
   puts "User added"
 else
   puts "Failed"
 end
 
 # Day
-day1 = Date.new(2022, 1, 1)
-day = 1
-365.times do
-  newDay = Day.create!(:calendar_date => day1 + day, :user_id => user.id )
+# day1 = Date.new(2022, 1, 1)
+# day = 0
 
-  if newDay.save
-    puts "Day #{day} added"
-  else
-    puts "Failed"
-  end
+# 365.times do
+#   newDay = Day.create!(:calendar_date => day1 + day, :user_id => user.id )
 
-  happy_mood = Mood.create!(day: newDay)
-  if happy_mood.save
-    puts "Mood #{day} added"
-  else
-    puts "Failed"
-  end
+#   if newDay.save
+#     puts "Day #{day + 1} added"
+#   else
+#     puts "Failed"
+#   end
 
-  day = day += 1
-end
+#   happy_mood = Mood.create!(day: newDay)
+#   if happy_mood.save
+#     puts "Mood #{day + 1} added"
+#   else
+#     puts "Failed"
+#   end
+
+#   day = day += 1
+# end
 
 angry = '😡'
 sad = '😢'
@@ -47,7 +55,7 @@ excited = '😍'
 
 all_the_moods = [angry, sad, meh, neutral, happy, excited]
 
-task1 = Task.create!(title: 'Call supplier for delivery details', day: Day.find(60))
-task2 = Task.create!(title: 'Make bed', day: Day.find(60))
-task3 = Task.create!(title: 'Shower', day: Day.find(60))
-task4 = Task.create!(title: 'Start essay outline', day: Day.find(60))
+# task1 = Task.create!(title: 'Call supplier for delivery details', day: Day.find(60))
+# task2 = Task.create!(title: 'Make bed', day: Day.find(60))
+# task3 = Task.create!(title: 'Shower', day: Day.find(60))
+# task4 = Task.create!(title: 'Start essay outline', day: Day.find(60))

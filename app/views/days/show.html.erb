@@ -41,14 +41,19 @@
               </div>
             <% end  %>
           <% end %>
-          <div class="col-md-12" id="hidden">
-            <%= simple_form_for([@day, @task], remote: true) do |f| %>
-              <%= f.input :title, :input_html => { :class => "task-list-title" }  %>
-              <%= f.submit 'Confirm', class: "btn btn-new-task" %>
+          <div class="col-md-12" id="hidden" style="display: none;">
+            <%= simple_form_for([@day, @task], remote: true, :input_html => { :onsubmit => "hideNewTask()"}) do |f| %>
+              <%= f.input :title, :input_html => { :class => "task-list-title" }, label: false  %>
+              <%= button_tag type: 'submit', class: "task-done" do %>
+                  <i class="far fa-check-circle"></i>
+              <% end %>
             <% end %>
           </div>
-          <div class="btn btn-new-task">
-            <%= link_to "Add new task", new_day_task_path(day_id: @day.id)%>
+          <div class="btn btn-new-task cancel" id="cancel-task-btn" style="display: none;">
+            <div onclick="hideNewTask()">Cancel</div>
+          </div>
+          <div class="btn btn-new-task" id="new-task-btn" style="display: block;">
+            <div onclick="hideNewTask()">Add Task</div>
           </div>
         </div>
       </div>
@@ -77,4 +82,22 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+
+function hideNewTask() {
+  var x = document.getElementById("hidden");
+  var y = document.getElementById("cancel-task-btn")
+  var z = document.getElementById("new-task-btn")
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.style.display = "block";
+    z.style.display = "none";
+  } else {
+    x.style.display = "none";
+    y.style.display = "none";
+    z.style.display = "block";
+  }
+}
+
+
+
 </script>
