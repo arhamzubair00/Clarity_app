@@ -41,14 +41,14 @@
               </div>
             <% end  %>
           <% end %>
-          <div class="btn btn-new-task">
-            <%= link_to "Add new task", new_day_task_path(day_id: @day.id)%>
-          </div>
-          <div id="hidden" hidden>
+          <div class="col-md-12" id="hidden" hidden>
             <%= simple_form_for([@day, @task], remote: true) do |f| %>
               <%= f.input :title, :input_html => { :class => "task-list-title" }  %>
               <%= f.submit 'Confirm', class: "btn btn-new-task" %>
             <% end %>
+          </div>
+          <div class="btn btn-new-task">
+            <%= link_to "Add new task", new_day_task_path(day_id: @day.id)%>
           </div>
         </div>
       </div>
