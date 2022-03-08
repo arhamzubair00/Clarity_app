@@ -193,3 +193,22 @@
   width: auto;
   height: 46px;
 }
+#hidden {
+  padding: 0;
+  display: flex;
+  margin-top: 5px;
+}
+
+#hidden .btn-new-task {
+  position: absolute;
+  right: 0px;
+  bottom: 1px;
+}
+
+@media only screen and (min-width: 992px) {
+  #hidden .task-list-title {
+    // flex-grow: 5;
+    width: 495px;
+    margin-left: 38px;
+  }
+}
