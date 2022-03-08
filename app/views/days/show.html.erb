@@ -41,7 +41,7 @@
               </div>
             <% end  %>
           <% end %>
-          <div class="col-md-12" id="hidden" hidden>
+          <div class="col-md-12" id="hidden">
             <%= simple_form_for([@day, @task], remote: true) do |f| %>
               <%= f.input :title, :input_html => { :class => "task-list-title" }  %>
               <%= f.submit 'Confirm', class: "btn btn-new-task" %>
