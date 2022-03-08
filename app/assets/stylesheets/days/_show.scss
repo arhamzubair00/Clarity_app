@@ -182,33 +182,36 @@
 #new_task {
   display:flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-#new_task .btn-new-task {
-  bottom: -7px;
-}
-
-#new_task .task-list-title {
-  width: auto;
-  height: 46px;
-}
 #hidden {
   padding: 0;
-  display: flex;
   margin-top: 5px;
 }
 
 #hidden .btn-new-task {
   position: absolute;
-  right: 0px;
-  bottom: 1px;
+  right: -10px;
+  bottom: -6px;
+  //border-radius: 0 25px 25px 0;
+  //height: 46px;
+}
+
+#hidden .task-done {
+  font-size: 25px;
+  margin-top: 7px;
+}
+
+#hidden .task-list-title {
+  height: 46px;
+  //border-radius: 25px 0 0 25px;
 }
 
 @media only screen and (min-width: 992px) {
   #hidden .task-list-title {
     // flex-grow: 5;
     width: 495px;
-    margin-left: 38px;
+    margin-left: 28px;
   }
 }

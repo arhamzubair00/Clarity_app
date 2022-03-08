@@ -44,11 +44,13 @@
           <div class="col-md-12" id="hidden">
             <%= simple_form_for([@day, @task], remote: true) do |f| %>
               <%= f.input :title, :input_html => { :class => "task-list-title" }, label: false  %>
-              <%= f.submit 'Confirm', class: "btn btn-new-task" %>
+              <%= button_tag type: 'submit', class: "task-done", onclick: "myFunction()" do %>
+                  <i class="far fa-check-circle"></i>
+              <% end %>
             <% end %>
           </div>
           <div class="btn btn-new-task">
-            <%= link_to "Add new task", new_day_task_path(day_id: @day.id)%>
+            <div onclick="myFunction()">Try it</div>
           </div>
         </div>
       </div>
@@ -76,5 +78,14 @@ for (var i = 0; i < btns.length; i++) {
     // Add the active class to the current/clicked button
     this.className += " active";
   });
+}
+
+function myFunction() {
+  var x = document.getElementById("hidden");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
 }
 </script>
