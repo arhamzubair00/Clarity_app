@@ -1,0 +1,62 @@
+.timer-container {
+display: flex;
+justify-content: center;
+}
+
+
+.button-container {
+display: flex;
+justify-content: center;
+}
+
+.timer, button {
+  margin: 0.5em;
+  border-radius: 5px;
+}
+
+.work-btn{
+  font-family: 'Playfair Display', serif;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.short-break-btn{
+  font-family: 'Playfair Display', serif;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.long-break-btn{
+  font-family: 'Playfair Display', serif;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.timer {
+  height: 11em;
+  width: 12em;
+  background-color: hotpink;
+  align-items: center;
+  padding: 1em;
+}
+
+#time-display {
+  font-size: 150px;
+  font-family: 'Playfair Display', serif;
+}
+
+
+
+.button:hover {
+  cursor: pointer;
+  background: lightgray;
+}
