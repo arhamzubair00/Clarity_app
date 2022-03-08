@@ -188,6 +188,8 @@
 #hidden {
   padding: 0;
   margin-top: 5px;
+  display: none;
+  height: 46px;
 }
 
 #hidden .btn-new-task {
@@ -215,3 +217,9 @@
     margin-left: 28px;
   }
 }
+ .cancel {
+   background-color: #931015;
+   //bottom: 10px;
+   margin-bottom: 21px;
+   margin-top: 12px;
+ }
