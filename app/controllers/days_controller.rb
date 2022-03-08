@@ -11,6 +11,6 @@ class DaysController < ApplicationController
     @day = Day.find(params[:id])
     @tasks = Task.select { |task| task.day == @day}
     @task = Task.new
-    @mood = Mood.find { |mood| mood.day == @day}
+    #@mood = Mood.find { |mood| mood.day == @day}
   end
 end
