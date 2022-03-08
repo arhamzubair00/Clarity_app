@@ -28,6 +28,9 @@ import "bootstrap";
 import { renderCalendar } from '../components/calendar';
 import { initTimer } from '../components/pomodoro';
 
+// import { moodEdit } from '../components/edit_mood';
+
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   const workBtn = document.getElementById("work-btn")
