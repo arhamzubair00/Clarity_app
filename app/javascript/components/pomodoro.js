@@ -1,5 +1,3 @@
-
-
 export const initTimer = () => {
 
   const workBtn = document.getElementById("work-btn")
@@ -7,7 +5,6 @@ export const initTimer = () => {
   const longBreakBtn = document.getElementById("long-break-btn")
   const startBtn = document.getElementById("start-btn")
   const pauseBtn = document.getElementById("pause-btn")
-  const resetBtn = document.getElementById("reset-btn")
 
 
 
@@ -15,14 +12,12 @@ export const initTimer = () => {
   let timeout;
 
 
-
   workBtn.addEventListener("click", function () { startTimer(25 * 60) })
   longBreakBtn.addEventListener("click", function () { startTimer(15 * 60) })
   shortBreakBtn.addEventListener("click", function () { startTimer(5 * 60) })
 
-  startBtn.addEventListener("click", function () { restartTimer() })
-  pauseBtn.addEventListener("click", function () { pauseTimer() })
-  resetBtn.addEventListener("click", function () { resetTimer() })
+
+
 
 
   function startTimer(time) {
@@ -30,16 +25,21 @@ export const initTimer = () => {
       clearInterval(timeout)
     }
     let allowedTime = time
+    let isPaused = false
     showTime(time)
     timeout = setInterval(function () {
       if (allowedTime == 0) {
         clearInterval(timeout)
         showTime(0)
       } else {
-        allowedTime--
-        showTime(allowedTime)
+        if (!isPaused) {
+          allowedTime--
+          showTime(allowedTime)
+        }
+
       }
     }, 1000);
+
 
     function showTime(allowedTime) {
       let minutes = pad(Math.floor(allowedTime / 60))
@@ -54,50 +54,27 @@ export const initTimer = () => {
       return number < 10 ? `0${number.toString()}` : number
     }
 
+    startBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      isPaused = false;
+    })
+
+    pauseBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      isPaused = true;
+    })
+
+    startBtn.addEventListener("click", function onClick() {
+      startBtn.style.backgroundColor = 'salmon';
+      startBtn.style.Color = 'white';
+    })
+
+    pauseBtn.addEventListener("click", function onClick() {
+      pauseBtn.style.backgroundColor = 'salmon';
+      pauseBtn.style.Color = 'white';
+    })
+
   }
-
-
-
-
-  function pauseTimer(time) {
-
-  }
-
-  function restartTimer(time) {
-
-  }
-
-  function resetTimer(time) {
-
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
