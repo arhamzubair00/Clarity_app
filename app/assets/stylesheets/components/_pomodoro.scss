@@ -4,7 +4,12 @@ justify-content: center;
 }
 
 
-.button-container {
+.pomo-button-container {
+display: flex;
+justify-content: center;
+}
+
+.spr-button-container {
 display: flex;
 justify-content: center;
 }
@@ -14,8 +19,10 @@ justify-content: center;
   border-radius: 5px;
 }
 
-.work-btn{
+#work-btn{
   font-family: 'Playfair Display', serif;
+  background-color: #EF9D82;
+  color: white;
   width: 100px;
   border: none;
   border-radius: 5px;
@@ -23,8 +30,10 @@ justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.short-break-btn{
+#short-break-btn{
   font-family: 'Playfair Display', serif;
+  background-color: #EF9D82;
+  color: white;
   width: 100px;
   border: none;
   border-radius: 5px;
@@ -32,8 +41,10 @@ justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.long-break-btn{
+#long-break-btn{
   font-family: 'Playfair Display', serif;
+  background-color: #EF9D82;
+  color: white;
   width: 100px;
   border: none;
   border-radius: 5px;
@@ -41,20 +52,45 @@ justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.timer {
-  height: 11em;
-  width: 12em;
-  background-color: hotpink;
-  align-items: center;
-  padding: 1em;
+#start-btn{
+  font-family: 'Playfair Display', serif;
+  background-color: #EF9D82;
+  color: white;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
+
+#pause-btn{
+  font-family: 'Playfair Display', serif;
+  background-color: #EF9D82;
+  color: white;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#reset-btn{
+  font-family: 'Playfair Display', serif;
+  background-color: #EF9D82;
+  color: white;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
 
 #time-display {
   font-size: 150px;
   font-family: 'Playfair Display', serif;
+  color: #456FAB;
 }
-
-
 
 .button:hover {
   cursor: pointer;
