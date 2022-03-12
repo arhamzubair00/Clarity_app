@@ -62,10 +62,13 @@ export const renderCalendar = () => {
   }
 
   document.querySelectorAll(".each-day span").forEach(day => {
-    day.addEventListener("click", event => {
+    day.addEventListener("click", async event => {
       selectedDate = new Date(date);
       selectedDate.setDate(event.target.innerHTML);
       console.log(selectedDate);
+      const response = await fetch('select_day_from_date');
+      const responseJson = await response.json();
+      console.log(responseJson["Message"])
     });
   })
 
@@ -91,8 +94,7 @@ if (calendar){
 
 
 
-//1. Click on one of the days, store date (d,m,y) in variable,
-//2. Log day to console (test)
+
 //3. Create POST request to send the date to a controller method (task/new)
 //4. Once date in controller method, create new task (day.calendar_date)
 //4a. Create instance of day, assign that day to the below new task - new task has a day_id attached to it.

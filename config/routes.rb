@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :tasks, except: [ :index ]
   end
   resources :moods, only: [:index, :edit, :show, :update]
+  get 'select_day_from_date', to: 'tasks#select_day_from_date'
 end

@@ -12,4 +12,5 @@ class DaysController < ApplicationController
     @task = Task.new
     @mood = Mood.find { |mood| mood.day == @day}
   end
+
 end

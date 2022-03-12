@@ -36,6 +36,11 @@ class TasksController < ApplicationController
     redirect_to day_path(@day)
   end
 
+  def select_day_from_date
+    puts 'hello from the browser'
+    render json: '{"Message": "Hello from the server"}'
+  end
+
   private
 
   def task_params
