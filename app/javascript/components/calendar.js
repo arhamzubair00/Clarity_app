@@ -1,7 +1,7 @@
 const date = new Date();
+let selectedDate = new Date();
 
 export const renderCalendar = () => {
-
 
   date.setDate(1);
   const monthDays = document.querySelector(".days");
@@ -61,9 +61,17 @@ export const renderCalendar = () => {
     monthDays.innerHTML = days;
   }
 
-
+  document.querySelectorAll(".each-day span").forEach(day => {
+    day.addEventListener("click", event => {
+      selectedDate = new Date(date);
+      selectedDate.setDate(event.target.innerHTML);
+      console.log(selectedDate);
+    });
+  })
 
 };
+
+
 const calendar = document.getElementById("calendar")
 if (calendar){
   document.querySelector(".prev").addEventListener("click", () => {
@@ -75,14 +83,11 @@ if (calendar){
     date.setMonth(date.getMonth() + 1);
     renderCalendar();
   });
+
+
 }
 
-// document.querySelectorAll(".day").forEach(day => {
-//   day.addEventListener("click", event => {
-//     date.setDate(event.target.innerHTML);
-//     console.log(date);
-//   });
-// })
+
 
 
 
