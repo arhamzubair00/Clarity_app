@@ -1,8 +1,9 @@
 const date = new Date();
+const currentMonth = new Date();
 let selectedDate = new Date();
 
 const renderTasks = (tasks, dayForTasks) => {
-  let dayOfMonth = new Date(date)
+  let dayOfMonth = new Date(currentMonth)
   dayOfMonth.setDate(dayForTasks)
   const formattedDayOfMonth = dayOfMonth.toISOString().split('T')[0]
   const tasksOfDay = tasks.find(task => task.calendar_date == formattedDayOfMonth);
@@ -17,15 +18,26 @@ const renderTasks = (tasks, dayForTasks) => {
   return renderedTasks;
 }
 
-const renderTaskCards = (tasks) => {
+const renderPomodoroButton = async(dayForPomodoro) => {
+  const dateForPomodoro = new Date(currentMonth);
+  dateForPomodoro.setDate(dayForPomodoro);
+  const formattedDate = dateForPomodoro.toISOString().split('T')[0];
+  const response = await fetch(`select_day_from_date?selected_date=${formattedDate}`);
+  const responseJson = await response.json();
+  console.log(responseJson["DayID"])
+  return `<button class="card-btn"><a href="/days/${responseJson["DayID"]}">Pomodoro</a></button>`
+}
+
+const renderTaskCards = async (tasks) => {
   const taskCards = document.querySelector("#task-cards");
+  const pomodoroButton = await renderPomodoroButton(currentMonth.getDate())
   taskCards.innerHTML = `
   <div class="task-card">
   <div class="row-card">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title">${date.getDate()-1}</h5>
-        ${renderTasks(tasks, date.getDate() - 1)}
+        <h5 class="card-title">${currentMonth.getDate()-1}</h5>
+        ${renderTasks(tasks, currentMonth.getDate() - 1)}
       </div>
     </div>
   </div>
@@ -33,9 +45,9 @@ const renderTaskCards = (tasks) => {
     <div class="row-card">
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title-center">${date.getDate()}</h5>
-          ${renderTasks(tasks, date.getDate())}
-          <button class="card-btn"><%= link_to "Pomodoro", "/days/61" %></button>
+          <h5 class="card-title-center">${currentMonth.getDate()}</h5>
+          ${renderTasks(tasks, currentMonth.getDate())}
+          ${pomodoroButton}
         </div>
       </div>
     </div>
@@ -44,8 +56,8 @@ const renderTaskCards = (tasks) => {
     <div class="row-card">
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">${date.getDate() + 1}</h5>
-          ${renderTasks(tasks, date.getDate() + 1)}
+          <h5 class="card-title">${currentMonth.getDate() + 1}</h5>
+          ${renderTasks(tasks, currentMonth.getDate() + 1)}
         </div>
       </div>
     </div>
@@ -62,7 +74,7 @@ const renderTaskCards = (tasks) => {
 export const renderCalendar = async() => {
   const tasks = await tasksOfMonth()
 
-  renderTaskCards(tasks)
+  await renderTaskCards(tasks)
 
   date.setDate(1);
   const monthDays = document.querySelector(".days");

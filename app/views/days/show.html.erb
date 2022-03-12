@@ -22,33 +22,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <%# ANTON'S WORK %>
         <%# "strftime" formats date according to the directives in the given format string. %>
         <h2><%= @day.calendar_date.strftime('%a, %d %b %Y') %></h2>
-        <% if @day.calendar_date == Date.today %>
-          <div class="pomo">
-            <p>00:00</p>
-            <div class="btn btn-peach">Start</div>
-          </div>
-        <% end %>
+
         <div class="task-list" id="task-list">
           <% if @tasks.blank? %>
             <div class="task-empty-message">Add your first task of the day.</div>
