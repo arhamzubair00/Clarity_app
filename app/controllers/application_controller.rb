@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
 
   # meta url helper
   def default_url_options
-    { host: ENV["DOMAIN"] || "www.clarityapp.uk" }
+    { host: ENV["DOMAIN"] || "localhost:3000" }
   end
 
   private
