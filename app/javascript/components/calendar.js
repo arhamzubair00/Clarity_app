@@ -2,7 +2,7 @@ const date = new Date();
 let selectedDate = new Date();
 
 export const renderCalendar = async() => {
-  await tasksOfMonth()
+  const tasks = await tasksOfMonth()
 
   date.setDate(1);
   const monthDays = document.querySelector(".days");
@@ -45,13 +45,18 @@ export const renderCalendar = async() => {
     </div>`;
   }
   for (let i = 1; i <= lastDay; i++) {
+    let dayOfMonth = new Date(date)
+    dayOfMonth.setDate(i)
+    const formattedDayOfMonth = dayOfMonth.toISOString().split('T')[0]
+    const tasksOfDay = tasks.find(task => task.calendar_date == formattedDayOfMonth);
+    const totalTasks = tasksOfDay ? tasksOfDay.total : ""
     if (
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      days += `<div class="each-day today"><span>${i}</span></div>`;
+      days += `<div class="each-day today"><span>${i}</span>${totalTasks}</div>`;
     } else {
-      days += `<div class="each-day"><span>${i}</span></div>`;
+      days += `<div class="each-day"><span>${i}</span>${totalTasks}</div>`;
     }
     monthDays.innerHTML = days;
   }
@@ -78,7 +83,7 @@ const tasksOfMonth = async () => {
   console.log('tasksOfMonth')
   const response = await fetch(`all_tasks`);
   const responseJson = await response.json();
-  console.log(responseJson)
+  return responseJson;
   // console.log(JSON.parse(responseJson[1].task_titles));
 };
 
