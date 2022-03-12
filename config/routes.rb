@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   resources :moods, only: [:index, :edit, :show, :update]
   get 'select_day_from_date', to: 'tasks#select_day_from_date'
+  get 'all_tasks', to: 'tasks#all_tasks'
 end

@@ -43,7 +43,6 @@ document.addEventListener('turbolinks:load', () => {
     initTimer();
   }
   if (calendar){
-    console.log("calendar");
     renderCalendar();
   }
 

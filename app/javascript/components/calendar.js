@@ -1,7 +1,8 @@
 const date = new Date();
 let selectedDate = new Date();
 
-export const renderCalendar = () => {
+export const renderCalendar = async() => {
+  await tasksOfMonth()
 
   date.setDate(1);
   const monthDays = document.querySelector(".days");
@@ -49,9 +50,7 @@ export const renderCalendar = () => {
       date.getMonth() === new Date().getMonth()
     ) {
       days += `<div class="each-day today"><span>${i}</span></div>`;
-      console.log("found current date: " + i);
     } else {
-      console.log("adding day: " + i);
       days += `<div class="each-day"><span>${i}</span></div>`;
     }
     monthDays.innerHTML = days;
@@ -71,10 +70,17 @@ export const renderCalendar = () => {
       console.log(responseJson["DayID"])
       window.location.href = `/days/${responseJson["DayID"]}`;
     });
-  })
+  });
 
 };
 
+const tasksOfMonth = async () => {
+  console.log('tasksOfMonth')
+  const response = await fetch(`all_tasks`);
+  const responseJson = await response.json();
+  console.log(responseJson)
+  // console.log(JSON.parse(responseJson[1].task_titles));
+};
 
 const calendar = document.getElementById("calendar")
 if (calendar){

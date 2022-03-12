@@ -37,12 +37,31 @@ class TasksController < ApplicationController
   end
 
   def select_day_from_date
-    puts 'hello from the browser'
-    puts params[:selected_date]
     @day = Day.find_by(calendar_date: params[:selected_date])
-    puts @day.id
     render json: "{\"DayID\": #{@day.id}}"
   end
+
+  def all_tasks
+    # @tasks = Day.joins(:tasks)
+    # @tasks.each do |d|
+    #   puts d.tasks
+    # end
+    # render json: @tasks.to_json()
+
+    res = ActiveRecord::Base.connection.execute("SELECT
+      calendar_date,
+      day_id,
+      COUNT(*) AS total,
+      COUNT(*) FILTER (WHERE status IS TRUE) AS total_done,
+      JSON_AGG(title) AS task_titles
+      FROM tasks
+      JOIN days ON days.id = tasks.day_id
+      GROUP BY calendar_date, day_id
+      ORDER BY calendar_date")
+
+    render json: res.to_json()
+  end
+
 
   private
 
