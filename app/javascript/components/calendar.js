@@ -65,10 +65,11 @@ export const renderCalendar = () => {
     day.addEventListener("click", async event => {
       selectedDate = new Date(date);
       selectedDate.setDate(event.target.innerHTML);
-      console.log(selectedDate);
-      const response = await fetch('select_day_from_date');
+      const formattedDate = selectedDate.toISOString().split('T')[0];
+      const response = await fetch(`select_day_from_date?selected_date=${formattedDate}`);
       const responseJson = await response.json();
-      console.log(responseJson["Message"])
+      console.log(responseJson["DayID"])
+      window.location.href = `/days/${responseJson["DayID"]}/tasks/new`;
     });
   })
 

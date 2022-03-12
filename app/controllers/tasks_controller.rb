@@ -38,7 +38,10 @@ class TasksController < ApplicationController
 
   def select_day_from_date
     puts 'hello from the browser'
-    render json: '{"Message": "Hello from the server"}'
+    puts params[:selected_date]
+    @day = Day.find_by(calendar_date: params[:selected_date])
+    puts @day.id
+    render json: "{\"DayID\": #{@day.id}}"
   end
 
   private
