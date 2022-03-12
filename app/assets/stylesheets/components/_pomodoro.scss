@@ -1,27 +1,27 @@
 .timer-container {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-
 .pomo-button-container {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .spr-button-container {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-.timer, button {
+.timer,
+button {
   margin: 0.5em;
   border-radius: 5px;
 }
 
-#work-btn{
-  font-family: 'Playfair Display', serif;
-  background-color: #EF9D82;
+#work-btn {
+  font-family: "Playfair Display", serif;
+  background-color: #ef9d82;
   color: white;
   width: 100px;
   border: none;
@@ -30,9 +30,9 @@ justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-#short-break-btn{
-  font-family: 'Playfair Display', serif;
-  background-color: #EF9D82;
+#short-break-btn {
+  font-family: "Playfair Display", serif;
+  background-color: #ef9d82;
   color: white;
   width: 100px;
   border: none;
@@ -41,9 +41,9 @@ justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-#long-break-btn{
-  font-family: 'Playfair Display', serif;
-  background-color: #EF9D82;
+#long-break-btn {
+  font-family: "Playfair Display", serif;
+  background-color: #ef9d82;
   color: white;
   width: 100px;
   border: none;
@@ -52,9 +52,9 @@ justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-#start-btn{
-  font-family: 'Playfair Display', serif;
-  background-color: #EF9D82;
+#start-btn {
+  font-family: "Playfair Display", serif;
+  background-color: #ef9d82;
   color: white;
   width: 100px;
   border: none;
@@ -63,9 +63,9 @@ justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-#pause-btn{
-  font-family: 'Playfair Display', serif;
-  background-color: #EF9D82;
+#pause-btn {
+  font-family: "Playfair Display", serif;
+  background-color: #ef9d82;
   color: white;
   width: 100px;
   border: none;
@@ -73,12 +73,11 @@ justify-content: center;
   padding: 0.25em 0.5em;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
-
 
 #time-display {
   font-size: 150px;
-  font-family: 'Playfair Display', serif;
-  color: #456FAB;
+  font-family: "Playfair Display", serif;
+  color: #456fab;
 }
 
 .button:hover {
@@ -86,9 +85,6 @@ justify-content: center;
   background: lightgray;
 }
 
-.text,input {
-  display: none;
-}
 .active + .text {
   display: block;
 }
