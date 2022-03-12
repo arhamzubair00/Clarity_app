@@ -1,8 +1,68 @@
 const date = new Date();
 let selectedDate = new Date();
 
+const renderTasks = (tasks, dayForTasks) => {
+  let dayOfMonth = new Date(date)
+  dayOfMonth.setDate(dayForTasks)
+  const formattedDayOfMonth = dayOfMonth.toISOString().split('T')[0]
+  const tasksOfDay = tasks.find(task => task.calendar_date == formattedDayOfMonth);
+  let renderedTasks = ""
+  if(tasksOfDay){
+    JSON.parse(tasksOfDay.task_titles).forEach (taskTitle => {
+      renderedTasks += `<div class="task">
+        <p class="card-text">${taskTitle}</p>
+       </div>`
+    })
+  }
+  return renderedTasks;
+}
+
+const renderTaskCards = (tasks) => {
+  const taskCards = document.querySelector("#task-cards");
+  taskCards.innerHTML = `
+  <div class="task-card">
+  <div class="row-card">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">${date.getDate()-1}</h5>
+        ${renderTasks(tasks, date.getDate() - 1)}
+      </div>
+    </div>
+  </div>
+  <div class="task-card">
+    <div class="row-card">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title-center">${date.getDate()}</h5>
+          ${renderTasks(tasks, date.getDate())}
+          <button class="card-btn"><%= link_to "Pomodoro", "/days/61" %></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="task-card">
+    <div class="row-card">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">${date.getDate() + 1}</h5>
+          ${renderTasks(tasks, date.getDate() + 1)}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`
+
+}
+
+
+
+
+
+//RENDER CALENDAR FUNCTION
 export const renderCalendar = async() => {
   const tasks = await tasksOfMonth()
+
+  renderTaskCards(tasks)
 
   date.setDate(1);
   const monthDays = document.querySelector(".days");
