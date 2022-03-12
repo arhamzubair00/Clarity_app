@@ -1,7 +1,7 @@
-# # config/meta.yml
+# config/meta.yml
 
-# meta_product_name: "Clarity"
-# meta_title: "Clarity - A Diary for the Neurodiverse"
-# meta_description: "A Diary for the Neurodiverse"
-# meta_image: "cover.png" # should exist in `app/assets/images/`
-# twitter_account: "@product_twitter_account"   # required for Twitter Cards
+meta_product_name: "Clarity"
+meta_title: "Clarity - A Diary for the Neurodiverse"
+meta_description: "A Diary for the Neurodiverse"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
