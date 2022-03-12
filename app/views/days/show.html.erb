@@ -2,6 +2,45 @@
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="day-component col-md-8">
+       <%# SOPHIE'S WORK %>
+
+        <div class="timer-container">
+          <p id="time-display">0:00</p>
+        </div>
+        <div class="pomo-button-container">
+          <button id="work-btn">Work</button>
+          <button id="short-break-btn">Short Break</button>
+          <button id="long-break-btn">Long Break</button>
+        </div>
+        <div class="spr-button-container">
+          <button id="start-btn">Start</button>
+          <button id="pause-btn">Pause</button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <%# ANTON'S WORK %>
         <%# "strftime" formats date according to the directives in the given format string. %>
         <h2><%= @day.calendar_date.strftime('%a, %d %b %Y') %></h2>
         <% if @day.calendar_date == Date.today %>
@@ -56,6 +95,13 @@
   </div>
 </div>
 
+
+<%# SOPHIE'S JS %>
+<%# <script src="pomodoro.js"></script> %>
+
+
+
+<%# ANTON'S JS %>
 <script>
 // Get the container element
 var btnContainer = document.getElementById("task-list");

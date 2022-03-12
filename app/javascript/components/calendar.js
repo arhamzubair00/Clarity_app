@@ -4,6 +4,7 @@ const date = new Date();
 
 export const renderCalendar = () => {
 
+
   date.setDate(1);
 
   const monthDays = document.querySelector(".days");
@@ -60,29 +61,30 @@ export const renderCalendar = () => {
     monthDays.innerHTML = days;
   }
 
+
+
 };
-
-document.querySelector(".prev").addEventListener("click", () => {
-  date.setMonth(date.getMonth() - 1);
-  renderCalendar();
-});
-
-document.querySelector(".next").addEventListener("click", () => {
-  date.setMonth(date.getMonth() + 1);
-  renderCalendar();
-});
-
-
-// document.querySelector(".day").addEventListener("click", () => {
-//   console.log("hello");
-// });
-
-document.querySelectorAll(".day").forEach(day => {
-  day.addEventListener("click", event => {
-    date.setDate(event.target.innerHTML);
-    console.log(date);
+const calendar = document.getElementById("calendar")
+if (calendar){
+  document.querySelector(".prev").addEventListener("click", () => {
+    date.setMonth(date.getMonth() - 1);
+    renderCalendar();
   });
-})
+
+  document.querySelector(".next").addEventListener("click", () => {
+    date.setMonth(date.getMonth() + 1);
+    renderCalendar();
+  });
+}
+
+// document.querySelectorAll(".day").forEach(day => {
+//   day.addEventListener("click", event => {
+//     date.setDate(event.target.innerHTML);
+//     console.log(date);
+//   });
+// })
+
+
 
 //1. Click on one of the days, store date (d,m,y) in variable,
 //2. Log day to console (test)
