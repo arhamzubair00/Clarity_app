@@ -121,14 +121,27 @@ export const renderCalendar = async() => {
     dayOfMonth.setDate(i)
     const formattedDayOfMonth = dayOfMonth.toISOString().split('T')[0]
     const tasksOfDay = tasks.find(task => task.calendar_date == formattedDayOfMonth);
-    const totalTasks = tasksOfDay ? tasksOfDay.total : ""
+
+    let taskDot = ""
+    if (tasksOfDay) {
+      if (dayOfMonth.getTime() > new Date().getTime()) {
+        taskDot = `<span class="dot alltasks-dot"></span>`
+      }
+      else if (tasksOfDay.total == tasksOfDay.total_done){
+        taskDot = `<span class="dot completed-dot"></span>`
+      }else {
+        taskDot = `<span class="dot nonecompleted-dot"></span>`
+      }
+    }
+
+
     if (
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      days += `<div class="each-day today"><span>${i}</span>${totalTasks}</div>`;
+      days += `<div class="each-day today"><span id="date-span">${i}</span>${taskDot}</div>`;
     } else {
-      days += `<div class="each-day"><span>${i}</span>${totalTasks}</div>`;
+      days += `<div class="each-day"><span id="date-span">${i}</span>${taskDot}</div>`;
     }
     monthDays.innerHTML = days;
   }
@@ -137,10 +150,10 @@ export const renderCalendar = async() => {
     monthDays.innerHTML = days;
   }
 
-  document.querySelectorAll(".each-day span").forEach(day => {
+  document.querySelectorAll(".each-day").forEach(day => {
     day.addEventListener("click", async event => {
       selectedDate = new Date(date);
-      selectedDate.setDate(event.target.innerHTML);
+      selectedDate.setDate(event.target.querySelector("#date-span").innerHTML);
       const formattedDate = selectedDate.toISOString().split('T')[0];
       const response = await fetch(`select_day_from_date?selected_date=${formattedDate}`);
       const responseJson = await response.json();
