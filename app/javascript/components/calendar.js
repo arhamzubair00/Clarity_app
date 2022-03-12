@@ -1,6 +1,8 @@
 const date = new Date();
 
 export const renderCalendar = () => {
+
+
   date.setDate(1);
   const monthDays = document.querySelector(".days");
   const lastDay = new Date(
@@ -58,24 +60,32 @@ export const renderCalendar = () => {
     days += `<div class="next-date">${j}</div>`;
     monthDays.innerHTML = days;
   }
+
+
+
 };
-document.querySelector(".prev").addEventListener("click", () => {
-  date.setMonth(date.getMonth() - 1);
-  renderCalendar();
-});
-document.querySelector(".next").addEventListener("click", () => {
-  date.setMonth(date.getMonth() + 1);
-  renderCalendar();
-});
-setTimeout(() => {
-  document.querySelectorAll(".each-day").forEach((day) => {
-    day.addEventListener("click", (event) => {
-      // date.setDate(event.target.innerHTML);
-      console.log(day);
-      console.log(``);
-    });
+const calendar = document.getElementById("calendar")
+if (calendar){
+  document.querySelector(".prev").addEventListener("click", () => {
+    date.setMonth(date.getMonth() - 1);
+    renderCalendar();
   });
-}, 100);
+
+  document.querySelector(".next").addEventListener("click", () => {
+    date.setMonth(date.getMonth() + 1);
+    renderCalendar();
+  });
+}
+
+// document.querySelectorAll(".day").forEach(day => {
+//   day.addEventListener("click", event => {
+//     date.setDate(event.target.innerHTML);
+//     console.log(date);
+//   });
+// })
+
+
+
 //1. Click on one of the days, store date (d,m,y) in variable,
 //2. Log day to console (test)
 //3. Create POST request to send the date to a controller method (task/new)
