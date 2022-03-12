@@ -68,7 +68,7 @@ input[type="radio"] label {
   padding: 0 100px;
 }
 
-.mood_notes {
+#mood_mood_notes {
   display: inline-block;
   height: 200px;
   border: 5px solid $peach;
@@ -82,11 +82,11 @@ input[type="radio"] label {
   padding: 40px;
 }
 
-.form-control.is-valid {
+.mood_notes.is-valid {
   border-color: $darkblue;
 }
 
-.form-control.is-valid:focus {
+.mood_notes.is-valid:focus {
   border-color: $darkblue;
 }
 
