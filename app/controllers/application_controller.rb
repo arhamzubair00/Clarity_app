@@ -34,6 +34,11 @@ class ApplicationController < ActionController::Base
     # end
   end
 
+  # meta url helper
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   private
 
   def find_mood_params
