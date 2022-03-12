@@ -35,9 +35,9 @@ class ApplicationController < ActionController::Base
   end
 
   # meta url helper
-  def default_url_options
-    { host: ENV["DOMAIN"] || "localhost:3000" }
-  end
+  # def default_url_options
+  #   { host: ENV["DOMAIN"] || "localhost:3000" }
+  # end
 
   private
 
