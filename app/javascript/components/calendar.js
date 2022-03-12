@@ -125,12 +125,12 @@ export const renderCalendar = async() => {
     let taskDot = ""
     if (tasksOfDay) {
       if (dayOfMonth.getTime() > new Date().getTime()) {
-        taskDot = `<span class="dot alltasks-dot"></span>`
+        taskDot = `<span class="dot">🗓</span>`
       }
       else if (tasksOfDay.total == tasksOfDay.total_done){
-        taskDot = `<span class="dot completed-dot"></span>`
+        taskDot = `<span class="dot">✅</span>`
       }else {
-        taskDot = `<span class="dot nonecompleted-dot"></span>`
+        taskDot = `<span class="dot">❌</span>`
       }
     }
 

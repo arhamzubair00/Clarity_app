@@ -125,22 +125,7 @@
 }
 
 .dot {
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
   display: inline-block;
   margin-left: 60px;
   margin-top: 2px;
-}
-
-.alltasks-dot {
-  background-color: #bbb;
-}
-
-.completed-dot {
-  background-color: #00CA56;
-}
-
-.nonecompleted-dot {
-  background-color:#FF5B5C;
 }
