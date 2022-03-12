@@ -48,11 +48,11 @@ export const renderCalendar = () => {
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      days += `<div class="each-day today"><span>${i}</span><button class="btn-add-task">➕</button></div>`;
+      days += `<div class="each-day today"><span>${i}</span></div>`;
       console.log("found current date: " + i);
     } else {
       console.log("adding day: " + i);
-      days += `<div class="each-day"><span>${i}</span><button class="btn-add-task">➕</button></div>`;
+      days += `<div class="each-day"><span>${i}</span></div>`;
     }
     monthDays.innerHTML = days;
   }
@@ -69,7 +69,7 @@ export const renderCalendar = () => {
       const response = await fetch(`select_day_from_date?selected_date=${formattedDate}`);
       const responseJson = await response.json();
       console.log(responseJson["DayID"])
-      window.location.href = `/days/${responseJson["DayID"]}/tasks/new`;
+      window.location.href = `/days/${responseJson["DayID"]}`;
     });
   })
 
@@ -95,10 +95,6 @@ if (calendar){
 
 
 
-
-//3. Create POST request to send the date to a controller method (task/new)
-//4. Once date in controller method, create new task (day.calendar_date)
-//4a. Create instance of day, assign that day to the below new task - new task has a day_id attached to it.
-//4b. day= Day.new(user_id: 1, calendar_date: <date from frontend>), need to convert date from frontend into Ruby date format.
-//4c. Task.new(day_id: day, title:)
-//5. If we created a task for 5th March, Task.where(day_id: Day.where(calendar_date: <date from frontend>))
+//If statement that checks if tasks on the date.
+//If there aren't tasks, then direct to task/new page
+//else direct to days/show (pomodoro)
