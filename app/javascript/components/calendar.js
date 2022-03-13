@@ -24,7 +24,6 @@ const renderPomodoroButton = async(dayForPomodoro) => {
   const formattedDate = dateForPomodoro.toISOString().split('T')[0];
   const response = await fetch(`select_day_from_date?selected_date=${formattedDate}`);
   const responseJson = await response.json();
-  console.log(responseJson["DayID"])
   return `<button class="card-btn"><a href="/days/${responseJson["DayID"]}">Pomodoro</a></button>`
 }
 
@@ -66,15 +65,10 @@ const renderTaskCards = async (tasks) => {
 
 }
 
-
-
-
-
 //RENDER CALENDAR FUNCTION
 export const renderCalendar = async() => {
   const tasks = await tasksOfMonth()
   const moods = await fetchAllMoods()
-  console.log(moods)
 
   await renderTaskCards(tasks)
 
@@ -143,9 +137,6 @@ export const renderCalendar = async() => {
       taskMood = ""
     }
 
-
-
-
     if (
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
@@ -168,19 +159,31 @@ export const renderCalendar = async() => {
       const formattedDate = selectedDate.toISOString().split('T')[0];
       const response = await fetch(`select_day_from_date?selected_date=${formattedDate}`);
       const responseJson = await response.json();
-      console.log(responseJson["DayID"])
       window.location.href = `/days/${responseJson["DayID"]}`;
     });
   });
 
+  if (!document.querySelector(".prev").getAttribute("listener")) {
+    document.querySelector(".prev").setAttribute("listener", 'true');
+    document.querySelector(".prev").addEventListener("click", () => {
+      date.setMonth(date.getMonth() - 1);
+      renderCalendar();
+    });
+  }
+
+  if (!document.querySelector(".next").getAttribute("listener")) {
+    document.querySelector(".next").setAttribute("listener", 'true');
+    document.querySelector(".next").addEventListener("click", () => {
+      date.setMonth(date.getMonth() + 1);
+      renderCalendar();
+    });
+  }
 };
 
 const tasksOfMonth = async () => {
-  console.log('tasksOfMonth')
   const response = await fetch(`all_tasks`);
   const responseJson = await response.json();
   return responseJson;
-  // console.log(JSON.parse(responseJson[1].task_titles));
 };
 
 const fetchAllMoods = async () => {
@@ -188,27 +191,4 @@ const fetchAllMoods = async () => {
   const responseJson = await response.json();
   const moods = JSON.parse(responseJson[0].all_moods)
   return moods;
-  // console.log(JSON.parse(responseJson[1].task_titles));
 };
-
-const calendar = document.getElementById("calendar")
-if (calendar){
-  document.querySelector(".prev").addEventListener("click", () => {
-    date.setMonth(date.getMonth() - 1);
-    renderCalendar();
-  });
-
-  document.querySelector(".next").addEventListener("click", () => {
-    date.setMonth(date.getMonth() + 1);
-    renderCalendar();
-  });
-
-}
-
-
-
-
-
-//If statement that checks if tasks on the date.
-//If there aren't tasks, then direct to task/new page
-//else direct to days/show (pomodoro)
