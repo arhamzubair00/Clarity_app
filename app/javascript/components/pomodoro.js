@@ -4,15 +4,30 @@ export const initTimer = () => {
   const shortBreakBtn = document.getElementById("short-break-btn")
   const longBreakBtn = document.getElementById("long-break-btn")
   const startBtn = document.getElementById("start-btn")
-  const colors = ['#456FAB', '#EF9D82']
 
   let timeDisplay = document.getElementById("time-display")
   let timeout;
-  let index = 0;
 
-  workBtn.addEventListener("click", function () { startTimer(25 * 60) })
-  longBreakBtn.addEventListener("click", function () { startTimer(15 * 60) })
-  shortBreakBtn.addEventListener("click", function () { startTimer(5 * 60) })
+  workBtn.addEventListener("click", function () {
+    startTimer(25 * 60)
+    workBtn.style.opacity = "1"
+    longBreakBtn.style.opacity = "0.5"
+    shortBreakBtn.style.opacity = "0.5"
+  })
+
+  longBreakBtn.addEventListener("click", function () {
+    startTimer(15 * 60)
+    workBtn.style.opacity = "0.5"
+    longBreakBtn.style.opacity = "1"
+    shortBreakBtn.style.opacity = "0.5"
+  })
+
+  shortBreakBtn.addEventListener("click", function () {
+    startTimer(5 * 60)
+    workBtn.style.opacity = "0.5"
+    longBreakBtn.style.opacity = "0.5"
+    shortBreakBtn.style.opacity = "1"
+  })
 
   function startTimer(time) {
     if (typeof timeout !== undefined) {
