@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :moods, only: [:index, :edit, :show, :update]
   get 'select_day_from_date', to: 'tasks#select_day_from_date'
   get 'all_tasks', to: 'tasks#all_tasks'
+  get 'get_moods_by_date', to: 'moods#get_moods_by_date'
 end
