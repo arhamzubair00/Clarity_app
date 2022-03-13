@@ -52,36 +52,15 @@
 }
 
 #start-btn {
-  font-family: "Playfair Display", serif;
-  background-color: #ef9d82;
-  color: white;
-  width: 100px;
-  border: none;
-  border-radius: 5px;
-  padding: 0.25em 0.5em;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  color: #ef9d82;
+
 }
 
-#pause-btn {
-  font-family: "Playfair Display", serif;
-  background-color: #ef9d82;
-  color: white;
-  width: 100px;
-  border: none;
-  border-radius: 5px;
-  padding: 0.25em 0.5em;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
 
 #time-display {
   font-size: 150px;
   font-family: "Playfair Display", serif;
   color: #456fab;
-}
-
-.button:hover {
-  cursor: pointer;
-  background: lightgray;
 }
 
 .active + .text {
