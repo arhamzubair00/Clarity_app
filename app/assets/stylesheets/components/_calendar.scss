@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 .calendar_container {
@@ -16,9 +16,9 @@
 }
 
 .calendar {
-  width:45rem;
+  width: 45rem;
   height: 52rem;
-  background-color:white;
+  background-color: white;
 }
 
 .month {
@@ -33,7 +33,7 @@
 }
 
 .month i {
-  color: #EF9D82;
+  color: #ef9d82;
   font-size: 2.5rem;
   cursor: pointer;
 }
@@ -45,7 +45,7 @@
 }
 
 .month h1 {
-  color: #EF9D82;
+  color: #ef9d82;
   font-size: 3rem;
   font-weight: 400;
   text-transform: uppercase;
@@ -55,7 +55,7 @@
 
 .month p {
   font-size: 1.6rem;
-  color: #EF9D82;
+  color: #ef9d82;
 }
 
 .weekdays {
@@ -85,20 +85,30 @@
 }
 
 .days div {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin: 0.3rem;
   width: calc(40.4rem / 7);
   height: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0.2em;
+  position: relative;
   transition: background-color 0.2s;
   border-style: solid;
-  border-color: #EF9D82;
-
+  border-color: #ef9d82;
 }
 
-.days div:hover:not(.today) {
+.days div span {
+  position: absolute;
+  line-height: 1;
+}
+
+.days div .btn-add-task {
+  position: absolute;
+  bottom: 2px;
+  right: 3px;
+  background: none;
+}
+
+.days div:hover {
   background-color: white;
   border: 0.2rem solid #456fab;
   cursor: pointer;
@@ -110,6 +120,18 @@
 }
 
 .today {
-  color:#456fab;
-  background-color: #EF9D82;
+  color: #456fab;
+  background-color: #ef9d82;
+}
+
+.dot {
+  display: inline-block;
+  margin-left: 60px;
+  margin-top: 2px;
+}
+
+.calendar-mood {
+  font-size: 40px;
+  margin-left: 21px;
+  margin-top: 28px;
 }

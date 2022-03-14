@@ -22,15 +22,31 @@ ActiveStorage.start()
 import "bootstrap";
 
 
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-//import { renderCalendar } from '../components/calendar';
+
+import { renderCalendar } from '../components/calendar';
+import { initTimer } from '../components/pomodoro';
+
 
 // import { moodEdit } from '../components/edit_mood';
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
+  const workBtn = document.getElementById("work-btn")
+  const calendar = document.getElementById("calendar")
+
   // initSelect2();
-//  renderCalendar();
+
+
+  if (workBtn){
+    initTimer();
+  }
+  if (calendar){
+    renderCalendar();
+  }
+
+
 });

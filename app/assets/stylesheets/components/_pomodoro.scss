@@ -1,0 +1,67 @@
+.timer-container {
+  display: flex;
+  justify-content: center;
+}
+
+.pomo-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -25px;
+}
+
+.spr-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.timer-button {
+  margin: 0.5em;
+  border-radius: 5px;
+}
+
+#work-btn {
+  font-family: "Playfair Display", serif;
+  background-color: #ef9d82;
+  color: white;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#short-break-btn {
+  font-family: "Playfair Display", serif;
+  background-color: #ef9d82;
+  color: white;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0.25em 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#long-break-btn {
+  font-family: "Playfair Display", serif;
+  background-color: #ef9d82;
+  color: white;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#time-display {
+  font-size: 150px;
+  font-family: "Playfair Display", serif;
+  color: #456fab;
+  margin-top: -30px;
+}
+
+.active + .text {
+  display: block;
+}

@@ -6,7 +6,7 @@
         <h2 class="mood-edit-title">How are you feeling today?</h2>
           <%= simple_form_for(@mood) do |f| %>
           <%= f.input :mood_name, as: :radio_buttons, collection: ['😡', '😢', '😟', '😐', '🙂', '😍'], class: 'mood-radio-btn' %>
-          <%= f.input :mood_notes, placeholder: 'I’m feeling great!!', class: 'mood-edit-input'%>
+          <%= f.input :mood_notes, placeholder: 'I’m feeling great!!', id: 'mood-edit-input'%>
           <%= f.submit class:"mood-edit-btn"%>
           <% end %>
           <button class="mood-edit-btn mood-edit-btn-inverted"><%= link_to "Skip", days_path %></button>
