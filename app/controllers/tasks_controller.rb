@@ -13,6 +13,7 @@ class TasksController < ApplicationController
       redirect_to day_path(@day)
     else
       #if the task doesnt save, reload the new task page
+      @tasks = Task.where(day: selected_day)
       render 'days/show'
     end
   end
