@@ -36,18 +36,17 @@
   border: 1px solid $midblue;
 }
 
-
 .task-title p {
   text-align: left;
   margin: 0;
 }
 
 .day-component {
- // justify-content:center;
+  // justify-content:center;
   margin: 10% 0;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .day-component h2 {
