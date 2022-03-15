@@ -1,20 +1,24 @@
 .timer-container {
   display: flex;
   justify-content: center;
+  & > p {
+    margin-bottom: 20px;
+  }
 }
 
 .pomo-button-container {
   display: flex;
   justify-content: center;
+  margin-top: -25px;
 }
 
 .spr-button-container {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
-.timer,
-button {
+.timer-button {
   margin: 0.5em;
   border-radius: 5px;
 }
@@ -23,7 +27,7 @@ button {
   font-family: "Playfair Display", serif;
   background-color: #ef9d82;
   color: white;
-  width: 100px;
+  //width: 100px;
   border: none;
   border-radius: 5px;
   padding: 0.25em 0.5em;
@@ -34,9 +38,11 @@ button {
   font-family: "Playfair Display", serif;
   background-color: #ef9d82;
   color: white;
-  width: 100px;
+  //width: 100px;
   border: none;
   border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 0.25em 0.5em;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -45,29 +51,7 @@ button {
   font-family: "Playfair Display", serif;
   background-color: #ef9d82;
   color: white;
-  width: 100px;
-  border: none;
-  border-radius: 5px;
-  padding: 0.25em 0.5em;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-
-#start-btn {
-  font-family: "Playfair Display", serif;
-  background-color: #ef9d82;
-  color: white;
-  width: 100px;
-  border: none;
-  border-radius: 5px;
-  padding: 0.25em 0.5em;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-
-#pause-btn {
-  font-family: "Playfair Display", serif;
-  background-color: #ef9d82;
-  color: white;
-  width: 100px;
+  //width: 100px;
   border: none;
   border-radius: 5px;
   padding: 0.25em 0.5em;
@@ -75,14 +59,10 @@ button {
 }
 
 #time-display {
-  font-size: 150px;
+  font-size: 120px;
   font-family: "Playfair Display", serif;
   color: #456fab;
-}
-
-.button:hover {
-  cursor: pointer;
-  background: lightgray;
+  margin-top: -60px;
 }
 
 .active + .text {

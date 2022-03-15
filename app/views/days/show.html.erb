@@ -1,54 +1,33 @@
 <div class="day-show">
   <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="day-component col-md-8">
-       <%# SOPHIE'S WORK %>
-
-        <div class="timer-container">
-          <p id="time-display">0:00</p>
-        </div>
-        <div class="pomo-button-container">
-          <button id="work-btn">Work</button>
-          <button id="short-break-btn">Short Break</button>
-          <button id="long-break-btn">Long Break</button>
-        </div>
-        <div class="spr-button-container">
-          <button id="start-btn">Start</button>
-          <button id="pause-btn">Pause</button>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <%# ANTON'S WORK %>
-        <%# "strftime" formats date according to the directives in the given format string. %>
+    <div class="row justify-content-center">
+      <div class="day-component col-md-8 col-11">
+      <%# "strftime" formats date according to the directives in the given format string. %>
         <h2><%= @day.calendar_date.strftime('%a, %d %b %Y') %></h2>
         <% if @day.calendar_date == Date.today %>
-          <div class="pomo">
-            <p>00:00</p>
-            <div class="btn btn-peach">Start</div>
+          <div class="pomodoro-container">
+
+            <%# SOPHIE'S WORK %>
+
+            <div class="timer-container">
+              <p id="time-display">0:00</p>
+            </div>
+            <div class="pomo-button-container">
+              <button class="col-3 col-md-2" id="work-btn">Work</button>
+              <button class="col-3 col-md-2" id="short-break-btn">Short Break</button>
+              <button class="col-3 col-md-2" id="long-break-btn">Long Break</button>
+            </div>
+            <div class="spr-button-container">
+              <div id="start-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 512 512"><title>ionicons-v5-c</title><path fill="#456fab" fill-opacity="0.5" d="M256,48C141.31,48,48,141.31,48,256s93.31,208,208,208,208-93.31,208-208S370.69,48,256,48Zm74.77,217.3L216.32,334.44A10.78,10.78,0,0,1,200,325.13V186.87a10.78,10.78,0,0,1,16.32-9.31L330.77,246.7A10.89,10.89,0,0,1,330.77,265.3Z"/></svg>
+              </div>
+            </div>
+
           </div>
         <% end %>
+        <%# ANTON'S WORK %>
+
+
         <div class="task-list" id="task-list">
           <% if @tasks.blank? %>
             <div class="task-empty-message">Add your first task of the day.</div>
@@ -56,23 +35,34 @@
             <% @tasks.sort_by{ |task| task.id }.each  do |task| %>
               <div class="task-list-item">
                 <div class="task-status">
-                  <div><%= render "task_status_form", task: task %></div>
+                  <div><%= render "days/task_status_form", task: task %></div>
                 </div>
                 <% if task.status == true %>
-                  <div class="btn task-list-title disabled">
+                  <div class="task-list-title disabled" id="task-title-<%= task.id %>" style="display: block">
                     <div class="task-title"><p><%= task.title %></p></div>
                   </div>
                 <% else %>
-                  <div class="btn task-list-title">
+                  <div class="task-list-title" id="task-title-<%= task.id %>" style="display: block">
                     <div class="task-title"><p><%= task.title %></p></div>
                   </div>
                 <% end %>
-                <div class="task-edit">
-                  <%= link_to edit_day_task_path(task.id, day_id: @day.id), class: "btn-task-edit" do %>
-                    <i class="fas fa-edit"></i>
+                <div class="hidden-edit-task" id="hidden-edit-task-<%= task.id %>" style="<%= @task.errors.messages.empty? ? "display: none;" : ""%>">
+                  <%= simple_form_for([@day, task], remote: true) do |f| %>
+                    <%= f.input :title, input_html: { class: "task-list-title" }, label: false  %>
+                    <%= button_tag type: 'submit', class: "task-done" do %>
+                        <i class="far fa-check-circle"></i>
+                    <% end %>
                   <% end %>
                 </div>
-                <div class="task-delete">
+                <div class="task-edit">
+                  <%# <%= link_to edit_day_task_path(task.id, day_id: @day.id), class: "btn-task-edit" do %>
+                    <%# <i class="fas fa-edit"></i> %>
+                  <%# <% end %>
+                  <div class="btn btn-task-edit" id="edit-task-<%= task.id %>" style="<%= @task.errors.messages.present? ? "display: none;" : ""%>">
+                    <div onclick="hideEditTask(<%= task.id %>)"><i class="fas fa-edit"></i></div>
+                  </div>
+                </div>
+                <div class="task-delete" id="delete-task-<%= task.id %>">
                   <%= link_to day_task_path(task.id, day_id: @day.id), class: "btn-task-delete", method: :delete do %>
                     <i class="fas fa-trash-alt"></i>
                   <% end %>
@@ -80,14 +70,19 @@
               </div>
             <% end  %>
           <% end %>
-          <div class="btn btn-new-task">
-            <%= link_to "Add new task", new_day_task_path(day_id: @day.id)%>
-          </div>
-          <div id="hidden" hidden>
+          <div class="task-list-item" id="hidden-new-task" style="<%= @task.errors.messages.empty? ? "display: none;" : ""%>">
             <%= simple_form_for([@day, @task], remote: true) do |f| %>
-              <%= f.input :title, :input_html => { :class => "task-list-title" }  %>
-              <%= f.submit 'Confirm', class: "btn btn-new-task" %>
+              <%= f.input :title, input_html: { class: "task-list-title" }, label: false  %>
+              <%= button_tag type: 'submit', class: "task-done" do %>
+                  <i class="far fa-check-circle"></i>
+              <% end %>
             <% end %>
+          </div>
+          <div class="btn btn-new-task cancel" id="cancel-task-btn" style="<%= @task.errors.messages.empty? ? "display: none;" : ""%>">
+            <div onclick="hideNewTask()">Cancel</div>
+          </div>
+          <div class="btn btn-new-task" id="new-task-btn" style="<%= @task.errors.messages.present? ? "display: none;" : ""%>">
+            <div onclick="hideNewTask()">Add Task</div>
           </div>
         </div>
       </div>
@@ -96,31 +91,72 @@
 </div>
 
 
+
 <%# SOPHIE'S JS %>
 <%# <script src="pomodoro.js"></script> %>
 
 
 
 <%# ANTON'S JS %>
+
 <script>
 // Get the container element
-var btnContainer = document.getElementById("task-list");
+// var btnContainer = document.getElementById("task-list");
 
-// Get all buttons with class="btn" inside the container
-var btns = btnContainer.getElementsByClassName("task-list-title");
+// // Get all buttons with class="btn" inside the container
+// var btns = btnContainer.getElementsByClassName("task-list-title");
 
-// Loop through the buttons and add the active class to the current/clicked button
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
+// // Loop through the buttons and add the active class to the current/clicked button
+// for (var i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function() {
+//     var current = document.getElementsByClassName("active");
 
-    // If there's no active class
-    if (current.length > 0) {
-      current[0].className = current[0].className.replace(" active", "");
-    }
+//     // If there's no active class
+//     if (current.length > 0) {
+//       current[0].className = current[0].className.replace(" active", "");
+//     }
 
-    // Add the active class to the current/clicked button
-    this.className += " active";
-  });
+//     // Add the active class to the current/clicked button
+//     this.className += " active";
+//   });
+// }
+
+function hideNewTask() {
+  const error = document.querySelector(".invalid-feedback");
+  console.log(error)
+  var x = document.getElementById("hidden-new-task");
+  var y = document.getElementById("cancel-task-btn");
+  var z = document.getElementById("new-task-btn");
+  console.log(x)
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.style.display = "block";
+    z.style.display = "none";
+  } else {
+    x.style.display = "none";
+    y.style.display = "none";
+    z.style.display = "block";
+  }
+}
+
+function hideEditTask(taskID) {
+  const error = document.querySelector(".invalid-feedback");
+  console.log(error)
+  var x = document.getElementById(`hidden-edit-task-${taskID}`);
+  var y = document.getElementById(`task-title-${taskID}`);
+  var z = document.getElementById(`delete-task-${taskID}`);
+  var w = document.getElementById(`edit-task-${taskID}`);
+  console.log(x)
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.style.display = "none";
+    z.style.display = "none";
+    w.style.display = "none";
+  } else {
+    x.style.display = "none";
+    y.style.display = "block";
+    z.style.display = "block";
+    w.style.display = "block";
+  }
 }
 </script>
