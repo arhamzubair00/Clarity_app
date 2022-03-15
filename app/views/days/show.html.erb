@@ -1,10 +1,10 @@
 <div class="day-show">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="day-component col-md-8 col-11">
+      <div class="day-component col-lg-8 col-md-10 col-11">
       <%# "strftime" formats date according to the directives in the given format string. %>
         <h2><%= @day.calendar_date.strftime('%a, %d %b %Y') %></h2>
-        <% if @day.calendar_date == Date.today %>
+        <%# if @day.calendar_date == Date.today %>
           <div class="pomodoro-container">
 
             <%# SOPHIE'S WORK %>
@@ -24,7 +24,7 @@
             </div>
 
           </div>
-        <% end %>
+        <%# end %>
         <%# ANTON'S WORK %>
 
 
@@ -33,7 +33,7 @@
             <div class="task-empty-message">Add your first task of the day.</div>
           <% else %>
             <% @tasks.sort_by{ |task| task.id }.each  do |task| %>
-              <div class="task-list-item">
+              <div class="task-list-item" id="task-item-<%= task.id %>">
                 <div class="task-status">
                   <div><%= render "days/task_status_form", task: task %></div>
                 </div>
@@ -46,14 +46,6 @@
                     <div class="task-title"><p><%= task.title %></p></div>
                   </div>
                 <% end %>
-                <div class="hidden-edit-task" id="hidden-edit-task-<%= task.id %>" style="<%= @task.errors.messages.empty? ? "display: none;" : ""%>">
-                  <%= simple_form_for([@day, task], remote: true) do |f| %>
-                    <%= f.input :title, input_html: { class: "task-list-title" }, label: false  %>
-                    <%= button_tag type: 'submit', class: "task-done" do %>
-                        <i class="far fa-check-circle"></i>
-                    <% end %>
-                  <% end %>
-                </div>
                 <div class="task-edit">
                   <%# <%= link_to edit_day_task_path(task.id, day_id: @day.id), class: "btn-task-edit" do %>
                     <%# <i class="fas fa-edit"></i> %>
@@ -67,6 +59,14 @@
                     <i class="fas fa-trash-alt"></i>
                   <% end %>
                 </div>
+              </div>
+              <div class="hidden-edit-task" id="hidden-edit-task-<%= task.id %>" style="<%= @task.errors.messages.empty? ? "display: none;" : ""%>">
+                <%= simple_form_for([@day, task], remote: true) do |f| %>
+                  <%= f.input :title, input_html: { class: "task-list-title" }, label: false  %>
+                  <%= button_tag type: 'submit', class: "task-done" do %>
+                      <i class="far fa-check-circle"></i>
+                  <% end %>
+                <% end %>
               </div>
             <% end  %>
           <% end %>
@@ -142,21 +142,21 @@ function hideNewTask() {
 function hideEditTask(taskID) {
   const error = document.querySelector(".invalid-feedback");
   console.log(error)
-  var x = document.getElementById(`hidden-edit-task-${taskID}`);
-  var y = document.getElementById(`task-title-${taskID}`);
-  var z = document.getElementById(`delete-task-${taskID}`);
-  var w = document.getElementById(`edit-task-${taskID}`);
+  var x = document.getElementById(`task-item-${taskID}`);
+  var y = document.getElementById(`hidden-edit-task-${taskID}`);
+  // var z = document.getElementById(`delete-task-${taskID}`);
+  // var w = document.getElementById(`edit-task-${taskID}`);
   console.log(x)
   if (x.style.display === "none") {
     x.style.display = "block";
     y.style.display = "none";
-    z.style.display = "none";
-    w.style.display = "none";
+    // z.style.display = "none";
+    // w.style.display = "none";
   } else {
     x.style.display = "none";
     y.style.display = "block";
-    z.style.display = "block";
-    w.style.display = "block";
+    // z.style.display = "block";
+    // w.style.display = "block";
   }
 }
 </script>
