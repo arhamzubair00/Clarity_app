@@ -25,7 +25,6 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
 import { renderCalendar } from '../components/calendar';
 import { initTimer } from '../components/pomodoro';
 
@@ -40,13 +39,14 @@ document.addEventListener('turbolinks:load', () => {
 
   // initSelect2();
 
-
   if (workBtn){
     initTimer();
   }
   if (calendar){
+    console.log("calendar");
     renderCalendar();
   }
+
 
 
 });

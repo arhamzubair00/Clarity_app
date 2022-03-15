@@ -3,5 +3,5 @@ class Day < ApplicationRecord
   has_many :tasks
   has_one :mood
 
-  validates :calendar_date, presence: true, uniqueness: { scope: :user_id }
+  validates :calendar_date, presence: true, uniqueness: true
 end
