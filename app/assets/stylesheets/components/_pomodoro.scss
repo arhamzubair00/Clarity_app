@@ -1,6 +1,9 @@
 .timer-container {
   display: flex;
   justify-content: center;
+  & > p {
+    margin-bottom: 20px;
+  }
 }
 
 .pomo-button-container {
@@ -24,7 +27,7 @@
   font-family: "Playfair Display", serif;
   background-color: #ef9d82;
   color: white;
-  width: 100px;
+  //width: 100px;
   border: none;
   border-radius: 5px;
   padding: 0.25em 0.5em;
@@ -35,7 +38,7 @@
   font-family: "Playfair Display", serif;
   background-color: #ef9d82;
   color: white;
-  width: 100px;
+  //width: 100px;
   border: none;
   border-radius: 5px;
   margin-left: 10px;
@@ -48,7 +51,7 @@
   font-family: "Playfair Display", serif;
   background-color: #ef9d82;
   color: white;
-  width: 100px;
+  //width: 100px;
   border: none;
   border-radius: 5px;
   padding: 0.25em 0.5em;
@@ -56,10 +59,10 @@
 }
 
 #time-display {
-  font-size: 150px;
+  font-size: 120px;
   font-family: "Playfair Display", serif;
   color: #456fab;
-  margin-top: -30px;
+  margin-top: -60px;
 }
 
 .active + .text {
