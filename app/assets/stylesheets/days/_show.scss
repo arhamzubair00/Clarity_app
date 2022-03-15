@@ -29,9 +29,13 @@
   background-color: white;
   width: 84%;
   left: 40px;
-  padding-left: 15px;
-  cursor:auto;
+  padding: 0.375rem 0.75rem;
 }
+
+.task-list-title.disabled {
+  border: 1px solid $midblue;
+}
+
 
 .task-title p {
   text-align: left;
@@ -88,4 +92,11 @@
 
 .task-done:hover {
   color: $midblue;
+}
+
+.pomodoro-container {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin: 15px 0;
+  padding: 20px 0 10px;
 }
