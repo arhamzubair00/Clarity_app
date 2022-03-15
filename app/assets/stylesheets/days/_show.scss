@@ -4,30 +4,6 @@
   min-height: 90vh;
 }
 
-.btn-peach {
-  border-radius: 5px;
-  background-color: $peach;
-  color: white;
-}
-
-.btn-mid-blue {
-  border-radius: 5px;
-  background-color: $midblue;
-  color: white;
-}
-
-.btn-new-task {
-  position: relative;
-  //right: 25px;
-  bottom: 0;
-  border-radius: 25px;
-  border: 1px solid $darkblue;
-  background-color: $darkblue;
-  color: white;
-  font-size: 12px;
-  margin: 22px 0;
-}
-
 .task-list {
   display: flex;
   flex-direction: column;
@@ -42,6 +18,9 @@
   align-items: center;
   margin: 5px 0;
   width: 100%;
+  & > form {
+    width: 100%;
+  }
 }
 
 .task-list-title {
@@ -51,71 +30,12 @@
   width: 84%;
   left: 40px;
   padding-left: 15px;
+  cursor:auto;
 }
 
 .task-title p {
   text-align: left;
   margin: 0;
-}
-
-.btn.task-list-title.active {
-  background-color: $darkblue;
-}
-
-.btn.task-list-title.active p {
-    color: white;
-}
-
-.task-list-title:hover {
-  background-color: $midblue;
-}
-
-.btn.task-list-title.active:hover {
-  background-color: $midblue;
-}
-
-.btn.task-list-title.disabled:hover {
-  background-color: $midblue;
-}
-
-.btn-task-delete {
-  font-size: 16px;
-  color: #EB474D;
-  position: relative;
-  //right: 24px;
-  bottom: 2px;
-}
-
-.btn-task-delete:hover {
-  color: #931015;
-}
-
-.btn-task-edit {
-  font-size: 16px;
-  color: $darkblue;
-  position: relative;
-  //right: 24px;
-  bottom: 2px;
-}
-
-.btn-new-task:hover {
-  background-color: white;
-  color: $darkblue;
-}
-
-.btn-new-task a:link, .btn-mid-blue a:link, .btn-task-edit a:link {
-  text-decoration: none;
-}
-
-.btn-new-task a:hover {
-  color: $darkblue;
-}
-.btn-mid-blue a:hover {
-  color: black;
-}
-
-.btn-task-edit:hover {
-  color: black;
 }
 
 .day-component {
@@ -130,15 +50,6 @@
   text-align: center !important;
   color: $darkblue;
   margin-top: 15px;
-}
-
-.pomo {
-  color: $darkblue;
-  text-align: center !important;
-}
-
-.pomo p {
- font-size: 70px;
 }
 
 .task-title {
@@ -177,19 +88,4 @@
 
 .task-done:hover {
   color: $midblue;
-}
-
-#new_task {
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-#new_task .btn-new-task {
-  bottom: -7px;
-}
-
-#new_task .task-list-title {
-  width: auto;
-  height: 46px;
 }

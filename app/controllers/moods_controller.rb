@@ -49,6 +49,14 @@ class MoodsController < ApplicationController
     end
   end
 
+  def get_moods_by_date
+    res = ActiveRecord::Base.connection.execute("SELECT JSON_OBJECT_AGG(calendar_date, mood_name) AS all_moods FROM moods
+    JOIN days ON days.id = moods.day_id
+    WHERE mood_name != '#';")
+    puts res.to_json()
+    render json: res.to_json()
+  end
+
 
   #Strong params
    private
