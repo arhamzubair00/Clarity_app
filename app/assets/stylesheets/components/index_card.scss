@@ -38,6 +38,7 @@
   color: #888888;
   background-color: #CFE6EE;
   border-radius: 10px;
+  font-size: 20px;
 }
 
 .card-btn {
@@ -54,4 +55,11 @@
   color: #ffffff;
   background-color: #ef9d82;
   transition: opacity 300ms ease-in-out;
+
+}
+.card-text {
+  font-size: 20;
+  line-height: 1.4545454545;
+  color: #2b292d;
+  letter-spacing: -0.01em;
 }
