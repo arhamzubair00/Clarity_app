@@ -14,31 +14,16 @@
             <li class="nav-item">
               <%= link_to "MoodLog", moods_path, class: "nav-link" %>
             </li>
-            <%# <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="moods_path" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Mood Log
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li> %>
             <li class="nav-item">
               <%= link_to "About", root_path, class: "nav-link" %>
             </li>
-            <li class="nav-item search-bar">
-              <form class="search-form form-inline my-2 my-lg-0">
-                <input class="search-input form-control mr-sm-2" type="search" placeholder="🔍 Search " aria-label="Search">
-              </form>
-            </li>
-            <li class="nav-item">
+            <li class="nav-item nav-login">
               <% if !user_signed_in? %>
                 <span class="nav-item">
                   <%= link_to "Login", new_user_session_path, class: "nav-link log-in" %>
                 </span>
               <% else %>
-                <span class="nav-item">
+                <span class="nav-item ">
                   <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link log-in" %>
                 </span>
               <% end %>
