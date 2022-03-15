@@ -1,25 +1,27 @@
-#new_task {
+#new_task, .edit_task {
   display:flex;
   flex-direction: row;
   justify-content: space-around;
+  // height: 46px;
+  // width:100%;
   & > .form-group {
     width: 84%;
   }
 }
 
-#hidden .task-done {
+#hidden-new-task .task-done, .hidden-edit-task .task-done {
   font-size: 25px;
   margin-top: 7px;
 }
 
-#hidden .task-list-title {
+#hidden-new-task .task-list-title, .hidden-edit-task .task-list-title{
   height: 46px;
   font-size: 22px;
   //border-radius: 25px 0 0 25px;
 }
 
 // @media only screen and (min-width: 992px) {
-#hidden .task-list-title {
+#hidden-new-task .task-list-title, .hidden-edit-task .task-list-title {
   // flex-grow: 5;
   width: 100%;
   margin-left: 20px;

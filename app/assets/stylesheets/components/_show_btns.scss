@@ -22,26 +22,6 @@
   margin: 22px 0;
 }
 
-.btn.task-list-title.active {
-  background-color: $darkblue;
-}
-
-.btn.task-list-title.active p {
-    color: white;
-}
-
-.task-list-title:hover {
-  background-color: $midblue;
-}
-
-.btn.task-list-title.active:hover {
-  background-color: $midblue;
-}
-
-.btn.task-list-title.disabled:hover {
-  background-color: $midblue;
-}
-
 .btn-task-delete {
   font-size: 16px;
   color: #EB474D;
@@ -60,6 +40,7 @@
   position: relative;
   //right: 24px;
   bottom: 2px;
+  padding: 0;
 }
 
 .btn-new-task:hover {
