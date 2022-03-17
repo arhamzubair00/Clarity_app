@@ -1,21 +1,21 @@
 <section class="mood-section">
 
   <div class="container mood-container">
-    <div class="d-flex justify-content-center" id="mood-log">
+    <div class="d-flex" id="mood-log">
       <h1 class="mood-log-text">Mood Log</h1>
     </div>
     <div class="moods-container">
-    <div class="justify-content: flex-start"><h4>Most recent</h4></div>
+    <div class="justify-content: flex-start"><h4 style="color: white; font-size: 24px;">Most recent</h4></div>
       <div class="mood-board">
         <% @moods.sort_by{ |mood| mood.id }.each do |mood|  %>
           <% if mood.mood_name != "#" %>
           <div class='task-row'>
 
-            <div class="mood-date"><p><%= mood.day.calendar_date.strftime('%d %b %Y') %></p></div>
+            <div class="mood-date"><p style="color: #456fab;"><%= mood.day.calendar_date.strftime('%d %b %Y') %></p></div>
 
             <div class='mood-notes'>
               <% current_mood_id = mood.id %>
-              <p><%= link_to mood.mood_notes, "moods/#{current_mood_id}/edit" %></p>
+              <p style="color: #456fab;"><%= link_to mood.mood_notes, "moods/#{current_mood_id}/edit" %></p>
             </div>
 
             <div class='mood-emoji'>
