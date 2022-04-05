@@ -282,10 +282,17 @@ Considering that this application is shared effort, despite all those missing el
 
 Big thank you to the most amazing team ever!
 
+<div
 [Sophie Mattacks](https://github.com/SophieMatts)  For the initial idea and giving your heart and soul into this app. 🤍
-[Arham Zubair](https://github.com/arhamzubair00)
-[Anton Gordon](https://github.com/JacqSiir)
-[Minsoo Cho](https://github.com/minsoocho-hj)
+     
+     
+[Arham Zubair](https://github.com/arhamzubair00) 
+     
+     
+[Anton Gordon](https://github.com/JacqSiir) 
+     
+     
+[Minsoo Cho](https://github.com/minsoocho-hj) 
 
 
 ## License
