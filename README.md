@@ -128,7 +128,6 @@ The application consisits of four models:
   - Titles must have at lease 3 characters but no more than 32.
 
 - Day
-	- The linch-pin of the app!
   - Each user has their own calendar which displays all the days
   - Each day has one mood log and can have many tasks
 <!--
