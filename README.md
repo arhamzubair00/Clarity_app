@@ -117,7 +117,7 @@ rails s
 ## DB Schema 
 
 ### The final schema of the application:
-<img width="699" alt="image" src="https://user-images.githubusercontent.com/71766604/161754039-77802105-deec-453e-af7e-ab7d06b0589c.png">
+<img alt="image" src="https://user-images.githubusercontent.com/71766604/161754039-77802105-deec-453e-af7e-ab7d06b0589c.png">
 
 ---
 
