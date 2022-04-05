@@ -16,8 +16,7 @@ The application is available here:
     <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161750307-df1ec09a-e428-47a3-b3c0-1dbe9ac977a0.png"></td>
   </tr>
   <tr>
-    <td><img src="" ></td>
-    <td><img src="" ></td>
+    <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161824001-875134cd-7343-4ee1-b887-8502ce58340c.png"></td>
   </tr>
 </table>
 
@@ -86,9 +85,7 @@ rails s
 
 <table>
   <tr>
-    <td><img src=""></td>
-    <td><img src=""></td>
-    <td><img src=""></td>
+    <td><img  alt="image" src="https://user-images.githubusercontent.com/71766604/161823799-8f814e09-db89-4b31-bdcd-1ac4cb871036.png"></td>
 </table>
 
 ---
