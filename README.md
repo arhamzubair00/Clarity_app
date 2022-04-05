@@ -16,7 +16,6 @@ The application is available here:
     <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161750307-df1ec09a-e428-47a3-b3c0-1dbe9ac977a0.png"></td>
   </tr>
   <tr>
-    
     <td><img src="" ></td>
     <td><img src="" ></td>
   </tr>
@@ -34,15 +33,6 @@ Install JS packages
 yarn install
 ```
 
-### ENV Variables
-Create `.env` file
-```
-touch .env
-```
-Inside `.env`, set these variables.
-```
-CLOUDINARY_URL=your_own_cloudinary_url_key
-```
 
 ### DB Setup
 ```
