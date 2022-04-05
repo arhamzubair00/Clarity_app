@@ -282,7 +282,6 @@ Considering that this application is shared effort, despite all those missing el
 
 Big thank you to the most amazing team ever!
 
-<div
 [Sophie Mattacks](https://github.com/SophieMatts)  For the initial idea and giving your heart and soul into this app. 🤍
      
      
