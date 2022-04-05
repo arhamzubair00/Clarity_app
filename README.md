@@ -1,6 +1,17 @@
 # Clarity
 ## A diary for the neurodiverse
 <-- Description -->
+
+Clarity is an app aimed at the neurodiverse community, who struggles with aspects of day-to-day life 
+due to considitions such as ADHD, Dyslexia, Autism etc.
+
+Features: 
+    - Monthly planner to log events and to-do lists.
+    - Daily “Emotion” alert. Choose how you’re feeling with a range of emoji’s and have the option to
+      elaborate in a notes box- in which you can save to your planner.
+    -Interactive “Pomodoro” - https://todoist.com/productivity-methods/pomodoro-technique
+
+
 ### Enjoy!
 
 The application is available here:
