@@ -1,6 +1,18 @@
-# Clarity
-## A diary for the neurodiverse
-.
+# Clarity - A diary for the neurodiverse
+
+----------------
+## Description 
+
+Clarity is an app aimed at people from the neurodiverse community, struggling with
+day-to-day tasks due to conditions such as ADHD, Autism, Dyslexia, Tourette's syndrome etc.
+
+## Features
+- Pomodoro timer to help with time management and avoiding hyperfocus 
+- Calendar to view patterns in mood changes at a glance. Also allows users to view days with complete tasks vs. incomplete tasks 
+- A daily reminder to record the state of your Mood
+- Mood log to view previous mood records  
+
+
 ### Enjoy!
 
 The application is available here:
@@ -97,6 +109,10 @@ rails s
     <td><img  alt="image" src="https://user-images.githubusercontent.com/71766604/161823799-8f814e09-db89-4b31-bdcd-1ac4cb871036.png"></td>
 </table>
 
+- Made component (button, navbar)
+- Organized color, font-style, image resources
+- Used layout gird (12columns-in order to follow bootstrap grid)
+
 
 ---
 
@@ -159,6 +175,8 @@ The application consisits of four models:
 
 - Entire User logic with authentication done with [DEVISE](https://github.com/heartcombo/devise)
 - Webpack and Action Cable for Live Chat in Groups
+- Calendar with Vanila JS
+- Pomodoro timer
 
 ---
 
@@ -167,93 +185,22 @@ The application consisits of four models:
 
 
 ### feature
-<!-- Animated background of the application is done purely with use of CSS and this is something I'm the most proud of.
-It consists of a div with gradient moving basically left to right and top to bottom.
-Inside the div, there is an empty list that serves as those animated squares in the background.
-```
-<div class="gradient"></div>
-<ul class="circles">
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-</ul>
-```
 
-While gradient is just translating its position in two axis, list elements are moving vertically, rotating and decreasing opacity at the same time in a loop.
-
-```
-.gradient {
-  z-index: -10;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(-45deg, #8741e6, #b2519f, #da5e58, #d8b46e);
-  background-size: 400% 400%;
-  animation: my-gradient 10s ease infinite;
-  overflow: hidden;
-}
-
-@keyframes my-gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.circles{
-  padding: 0;
-  margin: 0;
-  z-index: -9;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.circles li{
-  position: absolute;
-  display: block;
-  list-style: none;
-  width: 40vw;
-  height: 40vh;
-  background: rgba(255, 255, 255, 0.2);
-  animation: animate 25s linear infinite;
-  bottom: -150px;
-
-}
-
-.circles li:nth-child(1){
-  left: 25%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 0s;
-}
-``` -->
 
 ### Responsive Design
-Lanping page is available for responsive designed
-It could use some final touches, but overall I'd like to present examples below:
+Lanping page is fully available for responsive designed. One of our future improvement plan is making precise responsive design for other pages too.
 
 <table>
   <tr>
-    <td><img src="" ></td>
-    <td><img src="" ></td>
+    <td><img width="622" alt="image" src="https://user-images.githubusercontent.com/71766604/161830037-1fb37f3e-d599-4c38-ada4-d974958e16aa.png">
+</td>
+    <td><img width="605" alt="image" src="https://user-images.githubusercontent.com/71766604/161830172-5e7a349e-ecba-4903-9f08-f4d3168086c2.png"></td>
+
+    <td><img width="559" alt="image" src="https://user-images.githubusercontent.com/71766604/161830678-e1ec9c4e-fb0f-4df3-9c33-df4fdea6df0d.png"></td>
+
   </tr>
 </table>
+
 
 
 ## Conclusion
