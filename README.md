@@ -11,11 +11,12 @@ The application is available here:
 <table>
   <tr>
     <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161750179-625272cf-cde1-4133-a607-81a9ea23d49d.png"></td>
+    <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161752326-1d4e8b5d-de93-4eb6-b53b-abb870e74695.png"></td>
+    <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161752671-3921754b-66f9-4524-864c-13309d405dce.png"></td>
     <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161750307-df1ec09a-e428-47a3-b3c0-1dbe9ac977a0.png"></td>
-    <td><img src="" ></td>
   </tr>
   <tr>
-    <td><img src="" ></td>
+    
     <td><img src="" ></td>
     <td><img src="" ></td>
   </tr>
