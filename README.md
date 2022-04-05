@@ -100,7 +100,7 @@ rails s
 
 ---
 
-## DB Schema 
+## DB Schema
 
 ### The final schema of the application:
 <img alt="image" src="https://user-images.githubusercontent.com/71766604/161826464-a5380be9-bb83-44ae-b16d-12911b02870f.png">
@@ -111,19 +111,27 @@ rails s
 
 ## Back End
 
+The application consisits of four models:
+
 - User
 	- Entire User logic was created using [DEVISE](https://github.com/heartcombo/devise)
 	- Added Authentication logic to each page
 
 - Mood
-	- Entire User logic was created using [DEVISE](https://github.com/heartcombo/devise)
+  - A daily log of the user's mood or feelings.
+  - Each mood object must be assigned an emoji.
+  - If notes are added the can not exceeed 350 characters.
+  - Only one per day.
 
 - Task
-	- Entire User logic was created using [DEVISE](https://github.com/heartcombo/devise)
+	- Tasks are assigned to each day
+  - Titles must have at lease 3 characters but no more than 32.
 
 - Day
-	- Entire User logic was created using [DEVISE](https://github.com/heartcombo/devise)
-<!-- 
+	- The linch-pin of the app!
+  - Each user has their own calendar which displays all the days
+  - Each day has one mood log and can have many tasks
+<!--
 - Place
 	- Photo attachment using [Cloudinary](https://cloudinary.com/) as active_storage
 	- Phisical object, schools of dance, music clubs with occuring dancing events
@@ -134,7 +142,7 @@ rails s
 	- May have many attendants, groups and invites
 - Invite
 	- User can either add yourself to the even, invite someone else straight to the event or create a grou or add someone an existing group of people going together to the given event.
-	- Each user story have differen routes and path and its carrying different sets of params throughout all views. Not challenging at all. Not even a bit... 
+	- Each user story have differen routes and path and its carrying different sets of params throughout all views. Not challenging at all. Not even a bit...
 - Group
 	- Backbone of the aplication
 	- Internal dashboard for group of people going together to that one given event in that one place.
@@ -226,7 +234,7 @@ While gradient is just translating its position in two axis, list elements are m
   background: rgba(255, 255, 255, 0.2);
   animation: animate 25s linear infinite;
   bottom: -150px;
-  
+
 }
 
 .circles li:nth-child(1){
@@ -261,15 +269,15 @@ Considering that this application is shared effort, despite all those missing el
 Big thank you to the most amazing team ever!
 
 [Sophie Mattacks](https://github.com/SophieMatts)  For the initial idea and giving your heart and soul into this app. 🤍
-     
-     
-[Arham Zubair](https://github.com/arhamzubair00) 
-     
-     
-[Anton Gordon](https://github.com/JacqSiir) 
-     
-     
-[Minsoo Cho](https://github.com/minsoocho-hj) 
+
+
+[Arham Zubair](https://github.com/arhamzubair00)
+
+
+[Anton Gordon](https://github.com/JacqSiir)
+
+
+[Minsoo Cho](https://github.com/minsoocho-hj)
 
 
 ## License
