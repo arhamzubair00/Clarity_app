@@ -178,20 +178,15 @@ rails s
 ## Front End
 
 
-### feature
-
 ### Responsive Design
 Lanping page is fully available for responsive designed. One of our future improvement plan is making precise responsive design for other pages too.
 
 <table>
-  <tr>
-    <td><img width="622" alt="image" src="https://user-images.githubusercontent.com/71766604/161830037-1fb37f3e-d599-4c38-ada4-d974958e16aa.png">
-</td>
-    <td><img width="605" alt="image" src="https://user-images.githubusercontent.com/71766604/161830172-5e7a349e-ecba-4903-9f08-f4d3168086c2.png"></td>
+  <tr>  
+    <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161830037-1fb37f3e-d599-4c38-ada4-d974958e16aa.png"></td>
+    <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161830172-5e7a349e-ecba-4903-9f08-f4d3168086c2.png"></td>
+    <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161830678-e1ec9c4e-fb0f-4df3-9c33-df4fdea6df0d.png"></td>
 
-    <td><img width="559" alt="image" src="https://user-images.githubusercontent.com/71766604/161830678-e1ec9c4e-fb0f-4df3-9c33-df4fdea6df0d.png"></td>
-
-  </tr>
 </table>
 
 
