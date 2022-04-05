@@ -1,17 +1,6 @@
 # Clarity
 ## A diary for the neurodiverse
-<-- Description -->
-
-Clarity is an app aimed at the neurodiverse community, who struggles with aspects of day-to-day life 
-due to considitions such as ADHD, Dyslexia, Autism etc.
-
-Features: 
-    - Monthly planner to log events and to-do lists.
-    - Daily “Emotion” alert. Choose how you’re feeling with a range of emoji’s and have the option to
-      elaborate in a notes box- in which you can save to your planner.
-    -Interactive “Pomodoro” - https://todoist.com/productivity-methods/pomodoro-technique
-
-
+.
 ### Enjoy!
 
 The application is available here:
@@ -28,6 +17,8 @@ The application is available here:
   </tr>
   <tr>
     <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161824001-875134cd-7343-4ee1-b887-8502ce58340c.png"></td>
+    <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161824850-2bff7ef2-68da-4584-b659-53061cb95c03.png"></td>
+    <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161825131-a8df7b56-36c9-4ecb-ab2c-fa8bebacb533.png"></td>
   </tr>
 </table>
 
@@ -89,14 +80,11 @@ rails s
 
 ---
 
-## Prototyping using Figma
-
- Available at:
-<!-- link -->
+## Design user flow using whimsical
 
 <table>
   <tr>
-    <td><img  alt="image" src="https://user-images.githubusercontent.com/71766604/161823799-8f814e09-db89-4b31-bdcd-1ac4cb871036.png"></td>
+    <td><img alt="image" src="https://user-images.githubusercontent.com/71766604/161825642-2bcd40dc-f9aa-4435-a4d4-3d4aa69331f4.png"></td>
 </table>
 
 ---
@@ -104,28 +92,19 @@ rails s
 ## UX/UI using Figma
 
 
- Available at:
-<!-- link -->
-
-
-![Figma](/app/assets/images/figma.JPG?raw=true "Figma")
 <table>
   <tr>
-    <td><img src=""></td>
-    <td><img src=""></td>
-  </tr>	
-  <tr>
-    <td><img src=""></td>
-    <td><img src=""></td>
-  </tr>	
+    <td><img  alt="image" src="https://user-images.githubusercontent.com/71766604/161823799-8f814e09-db89-4b31-bdcd-1ac4cb871036.png"></td>
 </table>
+
 
 ---
 
 ## DB Schema 
 
 ### The final schema of the application:
-<img alt="image" src="https://user-images.githubusercontent.com/71766604/161754039-77802105-deec-453e-af7e-ab7d06b0589c.png">
+<img alt="image" src="https://user-images.githubusercontent.com/71766604/161826464-a5380be9-bb83-44ae-b16d-12911b02870f.png">
+
 
 ---
 
@@ -142,8 +121,7 @@ rails s
 - Task
 	- Entire User logic was created using [DEVISE](https://github.com/heartcombo/devise)
 
-
-- Model
+- Day
 	- Entire User logic was created using [DEVISE](https://github.com/heartcombo/devise)
 <!-- 
 - Place
@@ -173,7 +151,6 @@ rails s
 ## Extra features
 
 - Entire User logic with authentication done with [DEVISE](https://github.com/heartcombo/devise)
-- AJAX for Reviews
 - Webpack and Action Cable for Live Chat in Groups
 
 ---
