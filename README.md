@@ -117,23 +117,27 @@ rails s
 ## DB Schema 
 
 ### The final schema of the application:
-![Schema](/app/assets/images/schema.JPG?raw=true "Schema")
+<img width="699" alt="image" src="https://user-images.githubusercontent.com/71766604/161754039-77802105-deec-453e-af7e-ab7d06b0589c.png">
 
 ---
 
 
 ## Back End
 
-- Model name
-  - desc
-
-
-
-<!-- -User
+- User
 	- Entire User logic was created using [DEVISE](https://github.com/heartcombo/devise)
-	- Authentication logic
-	- Photo attachment using [Cloudinary](https://cloudinary.com/) as active_storage
-	- After logging in User can either look for other users to dance with or look for places to dance.
+	- Added Authentication logic to each page
+
+- Mood
+	- Entire User logic was created using [DEVISE](https://github.com/heartcombo/devise)
+
+- Task
+	- Entire User logic was created using [DEVISE](https://github.com/heartcombo/devise)
+
+
+- Model
+	- Entire User logic was created using [DEVISE](https://github.com/heartcombo/devise)
+<!-- 
 - Place
 	- Photo attachment using [Cloudinary](https://cloudinary.com/) as active_storage
 	- Phisical object, schools of dance, music clubs with occuring dancing events
@@ -161,8 +165,6 @@ rails s
 ## Extra features
 
 - Entire User logic with authentication done with [DEVISE](https://github.com/heartcombo/devise)
-- Photo attachment using [Cloudinary](https://cloudinary.com/) as active_storage for Users, Places and Events
-
 - AJAX for Reviews
 - Webpack and Action Cable for Live Chat in Groups
 
