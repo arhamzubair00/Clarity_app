@@ -4,14 +4,13 @@
 ## Description 
 
 Clarity is an app aimed at people from the neurodiverse community, struggling with
-day-to-day tasks due to conditions such as ADHD, Autism, Dyslexia, and Tourette's syndrome etc.
+day-to-day tasks due to conditions such as ADHD, Autism, Dyslexia, Tourette's syndrome etc.
 
 ## Features
-Pomodoro timer to help with time management and avoiding hyperfocus 
-Calendar to view patterns in mood changes at a glance. Also allows user to view days with complete tasks vs. incomplete tasks 
-A daily prompt to remind user to create a journal entry 
-Mood log to veiw journal entries 
-
+- Pomodoro timer to help with time management and avoiding hyperfocus 
+- Calendar to view patterns in mood changes at a glance. Also allows users to view days with complete tasks vs. incomplete tasks 
+- A daily reminder to record the state of your Mood
+- Mood log to view previous mood records  
 
 
 ### Enjoy!
