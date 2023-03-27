@@ -1,6 +1,16 @@
 # Clarity
 ## A diary for the neurodiverse
-.
+
+With Neurodiversity, comes super powers.<br>
+However, despite the brillaince of ND, there are aspects of it that require some outside help along the way.<br>
+That's where Clarity comes in to save the day.<br>
+
+• Monthly planner to log events and to-do list.<br>
+• Daily alerts for reminders you’ve set: “Take medication”, “Pick up prescription”.<br>
+• Daily “Emotion” alert. Choose how you’re feeling with a range of emoji’s and have the option to
+  elaborate in a notes box- in which you can save to your planner - as this would be extremely helpful for people titrating medications.<br>
+• Interactive “Pomodoro” - https://todoist.com/productivity-methods/pomodoro-technique.<br>
+
 ### Enjoy!
 
 The application is available here:
@@ -167,8 +177,8 @@ The application consisits of four models:
 
 
 ### Responsive Design
-Lanping page is available for responsive designed
-It could use some final touches, but overall I'd like to present examples below:
+Responsive design created using a combination of CSS grid and flexbox properties. 
+A clean layout to ensure that all points of the app are presented in clear and concise points. 
 
 <table>
 
@@ -181,18 +191,11 @@ It could use some final touches, but overall I'd like to present examples below:
 </table>
 
 
-## Conclusion
-
-Le Wagon Coding Bootcamp was simply the most amazing learning experience in my life with teaching quality I've never seen before and that application is the final showdown of all the skills acquired during the bootcamp.
-There is still so much to do, but it's mostly refactoring and working on the front end.
-The only important bit that is really missing is Testing and any TDD, CI/CD principles, but realistically, considering the time given - that was a necessary sacrifice.
-Considering that this application is shared effort, despite all those missing elements I think it is a viable product and it suffices to leave it in that state.
-
 ## Acknowledgements
 
 Big thank you to the most amazing team ever!
 
-[Sophie Mattacks](https://github.com/SophieMatts)  For the initial idea and giving your heart and soul into this app. 🤍
+[Sophie Mattacks](https://github.com/SophieMatts) For the initial idea and giving your heart and soul into this app. 🤍
 
 
 [Arham Zubair](https://github.com/arhamzubair00)
